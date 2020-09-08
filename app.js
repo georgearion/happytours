@@ -44,7 +44,10 @@ const getTour = (req, res) => {
 
   // if (id > tours.length) {
   if (!tour) {
-    return res.status(404).json({ status: 'fail', message: 'Invalid ID' });
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID',
+    });
   }
 
   res.status(200).json({
@@ -79,7 +82,10 @@ const createTour = (req, res) => {
 
 const updateTour = (req, res) => {
   if (req.params.id * 1 > tours.length) {
-    return res.status(404).json({ status: 'fail', message: 'Invalid ID' });
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID',
+    });
   }
 
   res.status(200).json({
@@ -92,12 +98,50 @@ const updateTour = (req, res) => {
 
 const deleteTour = (req, res) => {
   if (req.params.id * 1 > tours.length) {
-    return res.status(404).json({ status: 'fail', message: 'Invalid ID' });
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID',
+    });
   }
 
   res.status(204).json({
     status: 'success',
     data: null,
+  });
+};
+
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route is not yet defined',
+  });
+};
+
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route is not yet defined',
+  });
+};
+
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route is not yet defined',
+  });
+};
+
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route is not yet defined',
+  });
+};
+
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route is not yet defined',
   });
 };
 
@@ -110,11 +154,20 @@ const deleteTour = (req, res) => {
 // 3) ROUTES
 
 app.route('/api/v1/tours').get(getAllTours).post(createTour);
+
 app
   .route('/api/v1/tours/:id')
   .get(getTour)
   .patch(updateTour)
   .delete(deleteTour);
+
+app.route('/api/v1/users').get(getAllUsers).post(createUser);
+
+app
+  .route('/api/v1/users/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 
 // 4) START SERVER
 const port = 3000;
