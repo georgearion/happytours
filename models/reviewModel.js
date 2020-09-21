@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Tour = require('./tourModel');
 
 const reviewSchema = new mongoose.Schema(
   {
@@ -43,6 +44,58 @@ reviewSchema.pre(/^find/, function(next) {
   });
 
   next();
+});
+
+reviewSchema.statics.calcAverageRatings = async function(tourId) {
+  const stats = await this.aggregate([
+    {
+      $match: { tour: tourId }
+    },
+    {
+      $group: {
+        _id: '$tour',
+        nRating: { $sum: 1 },
+        avgRating: { $avg: '$rating' }
+      }
+    }
+  ]);
+
+  if (stats.length > 0) {
+    // update reviewAverage on Tour
+    await Tour.findByIdAndUpdate(tourId, {
+      ratingsQuantity: stats[0].nRating,
+      ratingsAverage: stats[0].avgRating
+    });
+  } else {
+    // when deleting the very last Review
+    // reset reviewAverage back to default on Tour
+    await Tour.findByIdAndUpdate(tourId, {
+      ratingsQuantity: 0,
+      ratingsAverage: 4.5
+    });
+  }
+};
+
+reviewSchema.post('save', function() {
+  // this points to current review Document
+  // this.constructor points to the review Model
+  this.constructor.calcAverageRatings(this.tour);
+});
+
+//findByIdAndUpdate
+//findByIdAndDelete
+reviewSchema.pre(/^findOneAnd/, async function(next) {
+  // this points to current Query
+  // save the Document on the Query
+  this.r = await this.findOne();
+  next();
+});
+
+reviewSchema.post(/^findOneAnd/, async function() {
+  // this points to current Query
+  // await this.findOne(); does not work here, query has already executed
+  // retrieve the Document from the Query and call the Static method
+  await this.r.constructor.calcAverageRatings(this.r.tour);
 });
 
 const Review = mongoose.model('Review', reviewSchema);
