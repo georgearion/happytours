@@ -33,6 +33,9 @@ const reviewSchema = new mongoose.Schema(
     toObject: { virtuals: true }
   }
 );
+// preventing DUplicate reviews
+// allow the user to add only 1 Review per Tour
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
 
 // QUERY MIDDLEWARE:
 // runs before the .save() and .create()
