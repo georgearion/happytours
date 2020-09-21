@@ -128,6 +128,11 @@ const tourSchema = new mongoose.Schema(
 tourSchema.index({ price: 1, ratingsAverage: -1 });
 tourSchema.index({ slug: 1 });
 
+// Index for GeoSpatial data,
+// '2dsphere' - a 2D sphere index, if the data describes real points on the erath like sphere
+// '2d'       - a 2D index if using just fictional points on a simple two dimensional plane
+tourSchema.index({ startLocation: '2dsphere' });
+
 tourSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
 });

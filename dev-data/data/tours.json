@@ -3,7 +3,7 @@
     "startLocation": {
       "description": "Saranrom Palace Park",
       "type": "Point",
-      "coordinates": [13.7499481,100.4891229],
+      "coordinates": [100.4891229, 13.7499481],
       "address": "Between the intersection of New Road and Rajini Road Phra Nakhon, Bangkok"
     },
     "ratingsAverage": 4.8,
@@ -29,28 +29,28 @@
         "_id": "5c88fa8cf4afda39709c2959",
         "description": "Suddhai Sawan Prasad Hall",
         "type": "Point",
-        "coordinates": [13.7499481,100.4891229],
+        "coordinates": [100.4891229, 13.7499481],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2958",
         "description": "The Grand Palace",
         "type": "Point",
-        "coordinates": [13.7499481,100.4891229],
+        "coordinates": [100.4891229, 13.7499481],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2957",
         "description": "Queen Sirikit Museum of Textiles",
         "type": "Point",
-        "coordinates": [13.7499481,100.4891229],
+        "coordinates": [100.4891229, 13.7499481],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2956",
         "description": "Temple of the Emerald Buddha",
         "type": "Point",
-        "coordinates": [13.7499481,100.4891229],
+        "coordinates": [100.4891229, 13.7499481],
         "day": 1
       }
     ]
@@ -59,7 +59,7 @@
     "startLocation": {
       "description": "Khao Lak Village",
       "type": "Point",
-      "coordinates": [8.6895917,98.2432312],
+      "coordinates": [98.2432312, 8.6895917],
       "address": "Khao Lak Village, Takua Pa, Takua Pa District, Phang-nga, Thailand"
     },
     "ratingsAverage": 5,
@@ -89,21 +89,21 @@
         "_id": "5c88fa8cf4afda39709c2954",
         "description": "Similan Islands National Park",
         "type": "Point",
-        "coordinates": [8.6334403,97.6507636],
+        "coordinates": [97.6507636, 8.6334403],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2953",
         "description": "Ko PA Yu (Ko Hok)",
         "type": "Point",
-        "coordinates": [8.5658561,97.647086],
+        "coordinates": [97.647086, 8.5658561],
         "day": 3
       },
       {
         "_id": "5c88fa8cf4afda39709c2952",
         "description": "Four Island (Koh Miang) Similan",
         "type": "Point",
-        "coordinates": [8.5658561,97.647086],
+        "coordinates": [97.647086, 8.5658561],
         "day": 5
       }
     ]
@@ -112,7 +112,7 @@
     "startLocation": {
       "description": "Surat Thani City Pillar Shrine",
       "type": "Point",
-      "coordinates": [9.1391616,99.3195038],
+      "coordinates": [99.3195038, 9.1391616],
       "address": "Talat, Mueang Surat Thani District, Surat Thani"
     },
     "ratingsAverage": 4.5,
@@ -142,14 +142,14 @@
         "_id": "5c88fa8cf4afda39709c295c",
         "description": "Don Sak Sakon Port, Lomprayah",
         "type": "Point",
-        "coordinates": [9.3369593,99.6798],
+        "coordinates": [99.6798, 9.3369593],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c295b",
         "description": "Angthong National Marine Park",
         "type": "Point",
-        "coordinates": [9.65831,99.6638586],
+        "coordinates": [99.6638586, 9.65831],
         "day": 2
       }
     ]
@@ -158,7 +158,7 @@
     "startLocation": {
       "description": "Royal Phuket Marina",
       "type": "Point",
-      "coordinates": [7.9667795,98.3885657],
+      "coordinates": [98.3885657, 7.9667795],
       "address": "68 Moo 2, Thepkasattri Rd Kohkaew, Muang, Phuket, 83000, Thailand"
     },
     "ratingsAverage": 4.7,
@@ -188,28 +188,28 @@
         "_id": "5c88fa8cf4afda39709c2965",
         "description": "Bamboo Island",
         "type": "Point",
-        "coordinates": [7.8168417,98.7933326],
+        "coordinates": [98.7933326, 7.8168417],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2964",
         "description": "Phi Phi Beach",
         "type": "Point",
-        "coordinates": [7.7365066,98.770329],
+        "coordinates": [98.770329, 7.7365066],
         "day": 4
       },
       {
         "_id": "5c88fa8cf4afda39709c2963",
         "description": "Maya Bay",
         "type": "Point",
-        "coordinates": [7.6763243,98.7684658],
+        "coordinates": [98.7684658, 7.6763243],
         "day": 5
       },
       {
         "_id": "5c88fa8cf4afda39709c2962",
         "description": "Pileh Lagoon",
         "type": "Point",
-        "coordinates": [7.6828872,98.7649176],
+        "coordinates": [98.7649176, 7.6828872],
         "day": 9
       }
     ]
@@ -218,7 +218,7 @@
     "startLocation": {
       "description": "Hua Hin Beach",
       "type": "Point",
-      "coordinates": [12.5680739,99.9521371],
+      "coordinates": [99.9521371, 12.5680739],
       "address": "Naret Damri Alley, Hua Hin, Hua Hin District, Prachuap Khiri Khan, 77110, Thailand"
     },
     "ratingsAverage": 4.6,
@@ -244,21 +244,21 @@
         "_id": "5c88fa8cf4afda39709c2960",
         "description": "Buddhist Temple",
         "type": "Point",
-        "coordinates": [12.063857,99.6294049],
+        "coordinates": [99.6294049, 12.063857],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c295f",
         "description": "Kui Buri National Park - Wildlife Area (อุทยานแห่งชาติกุยบุรีของแท้)",
         "type": "Point",
-        "coordinates": [12.0569607,99.6237314],
+        "coordinates": [99.6237314, 12.0569607],
         "day": 3
       },
       {
         "_id": "5c88fa8cf4afda39709c295e",
         "description": "Kui Buri National Park",
         "type": "Point",
-        "coordinates": [12.0572417,99.6233925],
+        "coordinates": [99.6233925, 12.0572417],
         "day": 5
       }
     ]
@@ -267,7 +267,7 @@
     "startLocation": {
       "description": "Chiang Mai City Arts & Cultural Center",
       "type": "Point",
-      "coordinates": [18.7902438,98.9847136],
+      "coordinates": [98.9847136, 18.7902438],
       "address": "Prapokkloa Rd, Tambon Si Phum, Mueang Chiang Mai District, Chiang Mai, 50200, Thailand"
     },
     "ratingsAverage": 3.9,
@@ -297,44 +297,44 @@
         "_id": "5c88fa8cf4afda39709c296b",
         "description": "Old Chiang Mai Cultural Center",
         "type": "Point",
-        "coordinates": [18.7714709,98.9779654],
+        "coordinates": [98.9779654, 18.7714709],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c296a",
         "description": "Wat Tham Chiang Dao",
         "type": "Point",
-        "coordinates": [19.393709,98.9264023],
+        "coordinates": [98.9264023, 19.393709],
         "day": 4
       },
       {
         "_id": "5c88fa8cf4afda39709c2969",
         "description": "Tha Phae Gate",
         "type": "Point",
-        "coordinates": [18.7872367,98.9849224],
+        "coordinates": [98.9849224, 18.7872367],
         "day": 6
       },
       {
         "_id": "5c88fa8cf4afda39709c2968",
         "description": "Hidden Village Chiang Mai",
         "type": "Point",
-        "coordinates": [18.8336641,98.9953733],
+        "coordinates": [98.9953733, 18.8336641],
         "day": 7
       },
       {
         "_id": "5c88fa8cf4afda39709c2967",
         "description": "Sibsongpanna Khantoke",
         "type": "Point",
-        "coordinates": [18.8060609,99.0265198],
+        "coordinates": [99.0265198, 18.8060609],
         "day": 10
       }
     ]
   },
   {
-   "startLocation": {
+    "startLocation": {
       "description": "Royal Phuket Marina",
       "type": "Point",
-      "coordinates": [7.9667795,98.3885657],
+      "coordinates": [98.3885657, 7.9667795],
       "address": "68 Moo 2, Thepkasattri Rd Kohkaew, Muang, Phuket, 83000, Thailand"
     },
     "ratingsAverage": 4.8,
@@ -360,21 +360,21 @@
         "_id": "5c88fa8cf4afda39709c2973",
         "description": "Ao Phang-nga National Park",
         "type": "Point",
-        "coordinates": [8.2810968,98.4577223],
+        "coordinates": [98.4577223, 8.2810968],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2972",
         "description": "Lot Cave",
         "type": "Point",
-        "coordinates": [8.2810968,98.4577223],
+        "coordinates": [98.4577223, 8.2810968],
         "day": 3
       },
       {
         "_id": "5c88fa8cf4afda39709c2971",
         "description": "James Bond Island",
         "type": "Point",
-        "coordinates": [8.2746328,98.4997887],
+        "coordinates": [98.4997887, 8.2746328],
         "day": 6
       }
     ]
@@ -383,7 +383,7 @@
     "startLocation": {
       "description": "Koh Rok Yai Beach",
       "type": "Point",
-      "coordinates": [7.2096188,99.0556978],
+      "coordinates": [99.0556978, 7.2096188],
       "address": "Koh Rok Yai Island coast, Andaman sea"
     },
     "ratingsAverage": 4.7,
@@ -413,7 +413,7 @@
         "_id": "5c88fa8cf4afda39709c2975",
         "description": "Hin Daeng",
         "type": "Point",
-        "coordinates": [7.1583257,98.9382353],
+        "coordinates": [98.9382353, 7.1583257],
         "day": 1
       }
     ]
@@ -422,7 +422,7 @@
     "startLocation": {
       "description": "Phuket Town Central Market",
       "type": "Point",
-      "coordinates": [7.8833485,98.3744589],
+      "coordinates": [98.3744589, 7.8833485],
       "address": "Ranong, Talat Nuea, Mueang Phuket District, Phuket 83000, Thailand"
     },
     "ratingsAverage": 4.4,
@@ -448,21 +448,21 @@
         "_id": "5c88fa8cf4afda39709c296f",
         "description": "Ton Pariwat Wildlife Conservation Area",
         "type": "Point",
-        "coordinates": [8.610427,98.5466216],
+        "coordinates": [98.5466216, 8.610427],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c296e",
         "description": "Ton Pariwat Song Phraek Waterfall",
         "type": "Point",
-        "coordinates": [8.610427,98.5466216],
+        "coordinates": [98.5466216, 8.610427],
         "day": 3
       },
       {
         "_id": "5c88fa8cf4afda39709c296d",
         "description": "Ton Pariwat Waterfall",
         "type": "Point",
-        "coordinates": [8.610427,98.5466216],
+        "coordinates": [98.5466216, 8.610427],
         "day": 5
       }
     ]
