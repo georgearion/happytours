@@ -11,9 +11,9 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
 
 <hr>
 
-- [**TOURS**](#tours)
+- ### [**TOURS**](#tours-endpoints)
 
-  - [**Get All Tours**](#get-all-tours)
+  - #### [**Get All Tours**](#get-all-tours-endpoints)
 
     - [Get Default Tours](#get-default-tours)
 
@@ -27,7 +27,7 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
   - [**Update Tour**](#update-tour)
   - [**Delete Tour**](#delete-tour)
 
-  - [**Tours - Special Routes**](#tours---special-routes)
+  - #### [**Tours - Special Routes**](#tours---special-routes-endpoints)
 
     - [Get Monthly Plan](#get-monthly-plan)
 
@@ -35,25 +35,41 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
     - [Get Tours Within Radius](#get-tours-within-radius)
     - [Get Distances To Tours From Location](#get-distances-to-tours-from-location)
 
-  - [**Tours / Reviews**](#tours--reviews)
+  - #### [**Tours / Reviews**](#tours--reviews-endpoints)
 
     - [Get All Reviews on Tour](#get-all-reviews-on-tour)
 
     - [Create New Review on Tour](#create-new-review-on-tour)
+
+- ### [**REVIEWS**](#reviews-endpoints)
+
+  - #### [**Get All Reviews**](#get-all-reviews-endpoints)
+
+    - [Get Default Reviews](#get-default-reviews)
+
+    - [Sorting Reviews](#sorting-reviews)
+    - [Filtering Reviews](#filtering-reviews)
+    - [Combination, Sorting and Filtering Reviews](#combination-sorting-and-filtering-reviews)
+
+  - [**Get Review**](#get-review)
+
+  - [**Create New Review**](#create-new-review)
+  - [**Update Review**](#update-review)
+  - [**Delete Review**](#delete-review)
 
 <br>
 <hr>
 <br>
 <br>
 
-## **Tours**
+## **Tours** Endpoints
 
 Get all Tours, create new ones, and edit and delete Tours. Also contains endpoints to special requirements
 
 <br>
 <br>
 
-### **Get All Tours**
+### **Get All Tours** Endpoints
 
 Accessing this endpoint retrieves a **List to All Tour Objects** in the database. This endpoint accepts params for further **Sorting** and **Filtering** and supports gte, lte, gt, lt operators. (also accepts combination of Sorting and filtering parms)
 
@@ -132,7 +148,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#get-all-tours)
 
 <br>
 <br>
@@ -233,7 +249,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#get-all-tours)
 
 <br>
 <br>
@@ -311,7 +327,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#get-all-tours)
 
 <br>
 <br>
@@ -411,7 +427,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#get-all-tours)
 
 <br>
 <br>
@@ -488,7 +504,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours)
 
 <br>
 <br>
@@ -496,9 +512,7 @@ Example Response
 ### **Create New Tour**
 
 Accessing this endpoint will **Create a Single Tour Object**.<br>
-Minimum required fields are name / duration / maxGrupSize / difficulty / price / summary, imageCover and startLocation.<br>
-
-\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can create new Tour)
+Minimum required fields are name / duration / maxGrupSize / difficulty / price / summary, imageCover and startLocation.<br><br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can create new Tour)
 
 <br>
 
@@ -594,7 +608,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours)
 
 <br>
 <br>
@@ -686,14 +700,14 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours)
 
 <br>
 <br>
 
 ### **Delete Tour**
 
-Accessing this endpoint will **Update a Single Tour Object**.<br><br> \* Requires the TourId.<br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can create new Tour)
+Accessing this endpoint will **Delete a Single Tour Object**.<br><br> \* Requires the TourId.<br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can delete Tour)
 
 <br>
 
@@ -737,12 +751,12 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours)
 
 <br>
 <br>
 
-### **Tours - Special Routes**
+### **Tours - Special Routes** Endpoints
 
 Contains endpoints to special requirements such as various statistics, distances from location to tours and more..
 
@@ -835,7 +849,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours---special-routes)
 
 <br>
 <br>
@@ -915,7 +929,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours---special-routes)
 
 <br>
 <br>
@@ -1019,7 +1033,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours---special-routes)
 
 <br>
 <br>
@@ -1096,12 +1110,12 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours---special-routes)
 
 <br>
 <br>
 
-### **Tours / Reviews**
+### **Tours / Reviews** Endpoints
 
 Get all Reviews for a single Tour, create new review on a single Tour.
 
@@ -1180,7 +1194,7 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours--reviews)
 
 <br>
 <br>
@@ -1251,7 +1265,600 @@ Example Response
 
 <br>
 
-[**^ Back to Top**](#table-of-contents)
+[**^ Back to Top**](#tours--reviews)
+
+<br>
+<br>
+
+## **Reviews** Endpoints
+
+Get all Reviews, create new ones, edit and delete Reviews.
+
+<br>
+<br>
+
+### **Get All Reviews** Endpoints
+
+Accessing this endpoint retrieves a **List to All Tour Objects** in the database.<br> This endpoint accepts params for further **Sorting** and **Filtering** and supports gte, lte, gt, lt operators. (also accepts combination of sorting and filtering parms)<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+<br>
+
+#### **Get Default Reviews**
+
+retrieve all Tours in database<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/reviews`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/reviews',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 64,
+    "data": {
+        "data": [
+            {
+                "rating": 5,
+                "createdAt": "2020-09-23T14:34:12.870Z",
+                "_id": "5f6c3f8a3ebdbd13c8c677c1",
+                "review": "Lorem taciti fringilla himenaeos ex aliquam litora nam ad maecenas",
+                "tour": "5c88fa8cf4afda39709c2951",
+                "user": {},
+                "id": "5f6c3f8a3ebdbd13c8c677c1"
+            },
+            {
+                "rating": 5,
+                "createdAt": "2020-09-21T12:38:47.452Z",
+                "_id": "5f689f1354d68e2620472d0b",
+                "review": "Cool",
+                "tour": "5f68937725f7d345fc6d6f4e",
+                "user": {},
+                "id": "5f689f1354d68e2620472d0b"
+            }
+            62 results hidden ...
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+#### **Sorting Reviews**
+
+Example, sorting reviews by Rating (ascending)<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/reviews?sort=rating`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/reviews?sort=rating',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 64,
+    "data": {
+        "data": [
+            {
+                "rating": 1,
+                "createdAt": "2020-09-19T00:53:56.848Z",
+                "_id": "5c8a3b4714eb5c17645c912c",
+                "review": "Ridiculus facilisis sem id aenean amet penatibus gravida phasellus a mus dui lacinia accumsan!!",
+                "user": {},
+                "tour": "5c88fa8cf4afda39709c2966",
+                "id": "5c8a3b4714eb5c17645c912c"
+            },
+            {
+                "rating": 2,
+                "createdAt": "2020-09-19T00:53:56.848Z",
+                "_id": "5c8a3d9b14eb5c17645c9141",
+                "review": "Vitae vulputate id quam metus orci cras mollis vivamus vehicula sapien et",
+                "user": {},
+                "tour": "5c88fa8cf4afda39709c296c",
+                "id": "5c8a3d9b14eb5c17645c9141"
+            }
+            62 results hidded...
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+#### **Filtering Reviews**
+
+Example, filtering reviews by Rating (greater than 4.5)<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/reviews?rating[gt]=4.5`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/reviews?rating[gt]=4.5',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 46,
+    "data": {
+        "data": [
+            {
+                "rating": 5,
+                "createdAt": "2020-09-23T14:34:12.870Z",
+                "_id": "5f6c3f8a3ebdbd13c8c677c1",
+                "review": "Lorem taciti fringilla himenaeos ex aliquam litora nam ad maecenas",
+                "tour": "5c88fa8cf4afda39709c2951",
+                "user": {},
+                "id": "5f6c3f8a3ebdbd13c8c677c1"
+            },
+            {
+                "rating": 5,
+                "createdAt": "2020-09-21T12:38:47.452Z",
+                "_id": "5f689f1354d68e2620472d0b",
+                "review": "Cool",
+                "tour": "5f68937725f7d345fc6d6f4e",
+                "user": {},
+                "id": "5f689f1354d68e2620472d0b"
+            },
+            44 results hidded...
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+#### **Combination, Sorting and Filtering Reviews**
+
+Example, **Filtering Reviews** by Rating (less then /or equal 3) **and Sorting Reviews** by Rating (descending)<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/reviews?rating[lte]=3&sort=-rating`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/reviews?rating[lte]=3&sort=-rating',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 3,
+    "data": {
+        "data": [
+            {
+                "rating": 3,
+                "createdAt": "2020-09-19T00:53:56.848Z",
+                "_id": "5c8a39b614eb5c17645c9123",
+                "review": "Blandit varius nascetur est felis praesent lorem himenaeos pretium dapibus tellus bibendum consequat ac duis",
+                "user": {},
+                "tour": "5c88fa8cf4afda39709c2974",
+                "id": "5c8a39b614eb5c17645c9123"
+            },
+            {
+                "rating": 2,
+                "createdAt": "2020-09-19T00:53:56.848Z",
+                "_id": "5c8a3d9b14eb5c17645c9141",
+                "review": "Vitae vulputate id quam metus orci cras mollis vivamus vehicula sapien et",
+                "user": {},
+                "tour": "5c88fa8cf4afda39709c296c",
+                "id": "5c8a3d9b14eb5c17645c9141"
+            },
+            {
+                "rating": 1,
+                "createdAt": "2020-09-19T00:53:56.848Z",
+                "_id": "5c8a3b4714eb5c17645c912c",
+                "review": "Ridiculus facilisis sem id aenean amet penatibus gravida phasellus a mus dui lacinia accumsan!!",
+                "user": {},
+                "tour": "5c88fa8cf4afda39709c2966",
+                "id": "5c8a3b4714eb5c17645c912c"
+            }
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+### **Get Review**
+
+Accessing this endpoint retrieves a **Single Review Object**.<br><br> \* Requires the reviewId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/reviews/:reviewId`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/reviews/5c8a3a7014eb5c17645c9124',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "rating": 5,
+            "createdAt": "2020-09-19T00:53:56.848Z",
+            "_id": "5c8a3a7014eb5c17645c9124",
+            "review": "Blandit varius nascetur est felis praesent lorem himenaeos pretium dapibus tellus bibendum consequat ac duis",
+            "user": {},
+            "tour": "5c88fa8cf4afda39709c2955",
+            "__v": 0,
+            "id": "5c8a3a7014eb5c17645c9124"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+<br>
+<br>
+
+### **Create New Review**
+
+Accessing this endpoint will **Create a Single Review Object**.<br>
+Minimum required fields are review / rating / tourId and userId .<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only User can create new review)
+
+<br>
+
+> **POST** `{{URL}}/api/v1/reviews`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  review: 'Great Tour Review',
+  rating: '4',
+  tour: '5c88fa8cf4afda39709c2955',
+  user: '5f60ad886fcb613938b1c0b7'
+});
+
+var config = {
+  method: 'post',
+  url: '{{URL}}/api/v1/reviews',
+  headers: {
+    Authorization: 'Bearer {{token}}',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 201 Created`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "rating": 4,
+            "createdAt": "2020-09-23T14:34:12.870Z",
+            "_id": "5f6c3f8a3ebdbd13c8c677c1",
+            "review": "Great Tour Review",
+            "tour": "5c88fa8cf4afda39709c2955",
+            "user": "5f60ad886fcb613938b1c0b7",
+            "__v": 0,
+            "id": "5f6c3f8a3ebdbd13c8c677c1"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+### **Update Review**
+
+Accessing this endpoint will **Update a Single Review Object**.<br>Only the provided fields will be updated and will return the entire Updated Review Object.<br><br>\* Requires the reviewId.<br>\* Accessing this Endpoint requires Authentication (only User and Admin can update Review)
+
+<br>
+
+> **PATCH** `{{URL}}/api/v1/reviews/:reviewId`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  rating: 4
+});
+
+var config = {
+  method: 'patch',
+  url: '{{URL}}/api/v1/reviews/5f6c3f8a3ebdbd13c8c677c1',
+  headers: {
+    Authorization: 'Bearer {{token}}',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "rating": 4,
+            "createdAt": "2020-09-23T14:34:12.870Z",
+            "_id": "5f6c3f8a3ebdbd13c8c677c1",
+            "review": "Lorem taciti fringilla himenaeos ex aliquam litora nam ad maecenas",
+            "tour": "5c88fa8cf4afda39709c2951",
+            "user": {},
+            "__v": 0,
+            "id": "5f6c3f8a3ebdbd13c8c677c1"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+### **Delete Review**
+
+Accessing this endpoint will **Delete a Single Review Object**.<br><br> \* Requires the reviewId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only User and Admin can delete review)
+
+<br>
+
+> **DELETE** `{{URL}}/api/v1/reviews/:reviewId`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'delete',
+  url: '{{URL}}/api/v1/reviews/5f6c3f8a3ebdbd13c8c677c1',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 204 No Content`
+
+```javascript
+// empty - no content will be displayed
+```
+
+<br>
+
+[**^ Back to Top**](#reviews)
 
 <br>
 <br>
