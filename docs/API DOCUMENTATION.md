@@ -57,6 +57,14 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
   - [**Update Review**](#update-review)
   - [**Delete Review**](#delete-review)
 
+* ### [**USERS**](#users-endpoints)
+
+  - [**Get All Users**](#get-all-users)
+
+  - [**Get User**](#get-user)
+  - [**Update User**](#update-user)
+  - [**Delete User**](#delete-user)
+
 <br>
 <hr>
 <br>
@@ -67,11 +75,21 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
 Get all Tours, create new ones, and edit and delete Tours. Also contains endpoints to special requirements
 
 <br>
+
+> ```javascript
+>    GET /api/v1/tours
+>    GET /api/v1/tours/:tourId
+>   POST /api/v1/tours/
+>  PATCH /api/v1/tours/:tourId
+> DELETE /api/v1/tours/:tourId
+> ```
+
 <br>
 
 ### **Get All Tours** Endpoints
 
-Accessing this endpoint retrieves a **List to All Tour Objects** in the database. This endpoint accepts params for further **Sorting** and **Filtering** and supports gte, lte, gt, lt operators. (also accepts combination of Sorting and filtering parms)
+Accessing this endpoint retrieves a **List to All Tour Objects** in the database. This endpoint accepts params for further **Sorting** and **Filtering** and supports gte, lte, gt, lt operators. (also accepts combination of Sorting and
+filtering parms)
 
 <br>
 
@@ -1120,6 +1138,12 @@ Example Response
 Get all Reviews for a single Tour, create new review on a single Tour.
 
 <br>
+
+> ```javascript
+>    GET /api/v1/tours/:tourId/reviews
+>   POST /api/v1/tours/:tourId/reviews
+> ```
+
 <br>
 
 #### **Get All Reviews on Tour**
@@ -1275,6 +1299,15 @@ Example Response
 Get all Reviews, create new ones, edit and delete Reviews.
 
 <br>
+
+> ```javascript
+>    GET /api/v1/reviews
+>    GET /api/v1/reviews/:reviewId
+>   POST /api/v1/reviews/
+>  PATCH /api/v1/reviews/:reviewId
+> DELETE /api/v1/reviews/:reviewId
+> ```
+
 <br>
 
 ### **Get All Reviews** Endpoints
@@ -1665,9 +1698,6 @@ Example Response
 <br>
 <br>
 
-<br>
-<br>
-
 ### **Create New Review**
 
 Accessing this endpoint will **Create a Single Review Object**.<br>
@@ -1859,6 +1889,280 @@ Example Response
 <br>
 
 [**^ Back to Top**](#reviews)
+
+<br>
+<br>
+
+## **Users** Endpoints
+
+Get all Users, edit and delete Users. <br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
+
+<br>
+
+> ```javascript
+>    GET /api/v1/users
+>    GET /api/v1/users/:userId
+>  PATCH /api/v1/users/:userId
+> DELETE /api/v1/users/:userId
+> ```
+
+<br>
+<br>
+
+### **Get All Users**
+
+Accessing this endpoint retrieves a **List to All User Objects** in the database.<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/users`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/users',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 20,
+    "data": {
+        "data": [
+            {
+                "role": "user",
+                "_id": "5c8a1dfa2f8fb814b56fa181",
+                "name": "Lourdes Browning",
+                "email": "loulou@example.com",
+                "photo": "user-2.jpg",
+                "passwordChangedAt": "2020-09-19T01:04:54.622Z"
+            },
+            {
+                "role": "user",
+                "_id": "5c8a1e1a2f8fb814b56fa182",
+                "name": "Sophie Louise Hart",
+                "email": "sophie@example.com",
+                "photo": "user-3.jpg",
+                "passwordChangedAt": "2020-09-19T01:05:36.432Z"
+            }
+            18 results hidden ...
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#users)
+
+<br>
+<br>
+
+### **Get User**
+
+Accessing this endpoint retrieves a **Single User Object**.<br><br>\* Requires the userId<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
+
+<br>
+
+> **GET** `{{URL}}/api/v1/users/:userId`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '{{URL}}/api/v1/users/5c8a1dfa2f8fb814b56fa181',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "role": "user",
+            "_id": "5c8a1dfa2f8fb814b56fa181",
+            "name": "Lourdes Browning",
+            "email": "loulou@example.com",
+            "photo": "user-2.jpg"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#users)
+
+<br>
+<br>
+
+### **Update User**
+
+Accessing this endpoint will **Update a Single User Object**.<br>Only the provided fields will be updated and will return the entire Updated User Object<br><br>\* Requires the userId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
+
+<br>
+
+> **PATCH** `{{URL}}/api/v1/users/:userId`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  name: 'Lourdes Michelle Browning'
+});
+
+var config = {
+  method: 'patch',
+  url: '{{URL}}/api/v1/users/5c8a1dfa2f8fb814b56fa181',
+  headers: {
+    Authorization: 'Bearer {{token}}',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "role": "user",
+            "_id": "5c8a1dfa2f8fb814b56fa181",
+            "name": "Lourdes Michelle Browning",
+            "email": "loulou@example.com",
+            "photo": "user-2.jpg"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#users)
+
+<br>
+<br>
+
+### **Delete User**
+
+Accessing this endpoint will **Delete a Single User Object**.<br><br> \* Requires the userId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, Admin can delete user)
+
+<br>
+
+> **DELETE** `{{URL}}/api/v1/users/:userId`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'delete',
+  url: '{{URL}}/api/v1/users/5f6485acbb1dde33603e2ef4',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 204 No Content`
+
+```javascript
+// empty - no content will be displayed
+```
+
+<br>
+
+[**^ Back to Top**](#users)
+
+<br>
+<br>
 
 <br>
 <br>
