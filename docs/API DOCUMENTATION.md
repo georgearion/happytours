@@ -65,6 +65,18 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
   - [**Update User**](#update-user)
   - [**Delete User**](#delete-user)
 
+* ### [**AUTHENTICATION**](#authentication-endpoints)
+
+  - [**Sign Up**](#sign-up)
+
+  - [**Login**](#login)
+  - [**Forgot Password**](#forgot-password)
+  - [**Reset Password**](#reset-password)
+  - [**Get Current User**](#get-current-user)
+  - [**Update Current User Data**](#update-current-user-data)
+  - [**Update Current User Password**](#update-current-user-password)
+  - [**Delete Current User**](#delete-current-user)
+
 <br>
 <hr>
 <br>
@@ -78,10 +90,10 @@ Get all Tours, create new ones, and edit and delete Tours. Also contains endpoin
 
 > ```javascript
 >    GET /api/v1/tours
->    GET /api/v1/tours/:tourId
+>    GET /api/v1/tours/:id
 >   POST /api/v1/tours/
->  PATCH /api/v1/tours/:tourId
-> DELETE /api/v1/tours/:tourId
+>  PATCH /api/v1/tours/:id
+> DELETE /api/v1/tours/:id
 > ```
 
 <br>
@@ -99,7 +111,7 @@ retrieve all Tours in database
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours`
+> **GET** `/api/v1/tours`
 
 <br>
 
@@ -112,7 +124,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/',
+  url: '/api/v1/tours/',
   headers: {}
 };
 
@@ -144,7 +156,6 @@ Example Response
         "images": [],
         "startDates": [],
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2955",
         "name": "Grand Palace Tour",
         "duration": 1,
         "maxGroupSize": 15,
@@ -155,8 +166,7 @@ Example Response
         "imageCover": "tour-2-cover.jpg",
         "locations": [],
         "slug": "grand-palace-tour",
-        "durationWeeks": 0.14285714285714285,
-        "id": "5c88fa8cf4afda39709c2955"
+        "durationWeeks": 0.14285714285714285
       }
       8 results hidded...
     ]
@@ -177,7 +187,7 @@ Example, sorting tours by Duration (number of days in ascending order)
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours?sort=duration`
+> **GET** `/api/v1/tours?sort=duration`
 
 <br>
 
@@ -190,7 +200,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/?sort=duration',
+  url: '/api/v1/tours/?sort=duration',
   headers: {}
 };
 
@@ -223,7 +233,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2955",
         "name": "Grand Palace Tour",
         "duration": 1,
         "maxGroupSize": 15,
@@ -234,8 +243,7 @@ Example Response
         "imageCover": "tour-2-cover.jpg",
         "locations": [],
         "slug": "grand-palace-tour",
-        "durationWeeks": 0.14285714285714285,
-        "id": "5c88fa8cf4afda39709c2955"
+        "durationWeeks": 0.14285714285714285
       },
       {
         "startLocation": {},
@@ -245,7 +253,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2974",
         "name": "Scuba Dive Tour",
         "duration": 3,
         "maxGroupSize": 12,
@@ -256,8 +263,7 @@ Example Response
         "imageCover": "tour-9-cover.jpg",
         "locations": [],
         "slug": "scuba-dive-tour",
-        "durationWeeks": 0.42857142857142855,
-        "id": "5c88fa8cf4afda39709c2974"
+        "durationWeeks": 0.42857142857142855
       }
       7 results hidded...
     ]
@@ -278,7 +284,7 @@ Example, filtering tours by Rating (greater than 4.8)
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours?ratingsAverage[gt]=4.8`
+> **GET** `/api/v1/tours?ratingsAverage[gt]=4.8`
 
 <br>
 
@@ -291,7 +297,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/?ratingsAverage[gt]=4.8',
+  url: '/api/v1/tours/?ratingsAverage[gt]=4.8',
   headers: {}
 };
 
@@ -324,7 +330,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2951",
         "name": "Similan Islands Snorkeling",
         "duration": 4,
         "maxGroupSize": 25,
@@ -335,8 +340,7 @@ Example Response
         "imageCover": "tour-1-cover.jpg",
         "locations": [],
         "slug": "similan-islands-snorkeling",
-        "durationWeeks": 0.5714285714285714,
-        "id": "5c88fa8cf4afda39709c2951"
+        "durationWeeks": 0.5714285714285714
       }
     ]
   }
@@ -356,7 +360,7 @@ Example, **Filtering Tours** by Duration (less then /or equal 3 days) **and Sort
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours?duration[lte]=3&sort=-price`
+> **GET** `/api/v1/tours?duration[lte]=3&sort=-price`
 
 <br>
 
@@ -369,7 +373,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/?duration[lte]=3&sort=-price',
+  url: '/api/v1/tours/?duration[lte]=3&sort=-price',
   headers: {}
 };
 
@@ -402,7 +406,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2974",
         "name": "Scuba Dive Tour",
         "duration": 3,
         "maxGroupSize": 12,
@@ -413,8 +416,7 @@ Example Response
         "imageCover": "tour-9-cover.jpg",
         "locations": [],
         "slug": "scuba-dive-tour",
-        "durationWeeks": 0.42857142857142855,
-        "id": "5c88fa8cf4afda39709c2974"
+        "durationWeeks": 0.42857142857142855
       },
       {
         "startLocation": {},
@@ -424,7 +426,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2955",
         "name": "Grand Palace Tour",
         "duration": 1,
         "maxGroupSize": 15,
@@ -435,8 +436,7 @@ Example Response
         "imageCover": "tour-2-cover.jpg",
         "locations": [],
         "slug": "grand-palace-tour",
-        "durationWeeks": 0.14285714285714285,
-        "id": "5c88fa8cf4afda39709c2955"
+        "durationWeeks": 0.14285714285714285
       }
     ]
   }
@@ -452,11 +452,11 @@ Example Response
 
 ### **Get Tour**
 
-Accessing this endpoint retrieves a **Single Tour Object**.<br><br> \* Requires the TourId.
+Accessing this endpoint retrieves a **Single Tour Object**.<br><br> \* Requires the Tour id.
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours/:tourId`
+> **GET** `/api/v1/tours/:id`
 
 <br>
 
@@ -469,7 +469,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/:tourId',
+  url: '/api/v1/tours/:id',
   headers: {}
 };
 
@@ -500,7 +500,6 @@ Example Response
       "startDates": [],
       "secretTour": false,
       "guides": [],
-      "_id": "5c88fa8cf4afda39709c2955",
       "name": "Grand Palace Tour",
       "duration": 1,
       "maxGroupSize": 15,
@@ -511,10 +510,8 @@ Example Response
       "imageCover": "tour-2-cover.jpg",
       "locations": [],
       "slug": "grand-palace-tour",
-      "__v": 0,
       "durationWeeks": 0.14285714285714285,
-      "reviews": [],
-      "id": "5c88fa8cf4afda39709c2955"
+      "reviews": []
     }
   }
 }
@@ -534,7 +531,7 @@ Minimum required fields are name / duration / maxGrupSize / difficulty / price /
 
 <br>
 
-> **POST** `{{URL}}/api/v1/tours`
+> **POST** `/api/v1/tours`
 
 <br>
 
@@ -562,7 +559,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
-  url: '{{URL}}/api/v1/tours',
+  url: '/api/v1/tours',
   headers: {
     Authorization: 'Bearer {{token}}',
     'Content-Type': 'application/json'
@@ -606,7 +603,6 @@ Example Response
             "startDates": [],
             "secretTour": false,
             "guides": [],
-            "_id": "5f6b5ded3ebdbd13c8c677c0",
             "name": "New Amaxing Tour",
             "duration": 1,
             "maxGroupSize": 1,
@@ -616,9 +612,7 @@ Example Response
             "imageCover": "new-tour-cover.jpg",
             "locations": [],
             "slug": "new-amaxing-tour",
-            "__v": 0,
-            "durationWeeks": 0.14285714285714285,
-            "id": "5f6b5ded3ebdbd13c8c677c0"
+            "durationWeeks": 0.14285714285714285
         }
     }
 }
@@ -633,11 +627,11 @@ Example Response
 
 ### **Update Tour**
 
-Accessing this endpoint will **Update a Single Tour Object**.<br>Only the provided fields will be updated and will return the entire Updated Tour Object<br><br>\* Requires the TourId.<br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can create new Tour)
+Accessing this endpoint will **Update a Single Tour Object**.<br>Only the provided fields will be updated and will return the entire Updated Tour Object<br><br>\* Requires the Tour id.<br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can create new Tour)
 
 <br>
 
-> **PATCH** `{{URL}}/api/v1/tours/:tourId`
+> **PATCH** `/api/v1/tours/:id`
 
 <br>
 
@@ -654,7 +648,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'patch',
-  url: '{{URL}}/api/v1/tours/:tourId',
+  url: '/api/v1/tours/:id',
   headers: {
     Authorization: 'Bearer {{token}}',
     'Content-Type': 'application/json'
@@ -697,7 +691,6 @@ Example Response
             "startDates": [],
             "secretTour": false,
             "guides": [],
-            "_id": "5f6b5ded3ebdbd13c8c677c0",
             "name": "New Amaxing Tour",
             "duration": 1,
             "maxGroupSize": 1,
@@ -707,10 +700,8 @@ Example Response
             "imageCover": "new-tour-cover.jpg",
             "locations": [],
             "slug": "new-amaxing-tour",
-            "__v": 0,
             "description": "Updated tour long description",
-            "durationWeeks": 0.14285714285714285,
-            "id": "5f6b5ded3ebdbd13c8c677c0"
+            "durationWeeks": 0.14285714285714285
         }
     }
 }
@@ -725,11 +716,11 @@ Example Response
 
 ### **Delete Tour**
 
-Accessing this endpoint will **Delete a Single Tour Object**.<br><br> \* Requires the TourId.<br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can delete Tour)
+Accessing this endpoint will **Delete a Single Tour Object**.<br><br> \* Requires the Tour id.<br>\* Accessing this Endpoint requires Authentication (only Admin and Lead-Guide can delete Tour)
 
 <br>
 
-> **DELETE** `{{URL}}/api/v1/tours/:tourId`
+> **DELETE** `/api/v1/tours/:id`
 
 <br>
 
@@ -742,7 +733,7 @@ var axios = require('axios');
 
 var config = {
   method: 'delete',
-  url: '{{URL}}api/v1/tours/:tourId',
+  url: 'api/v1/tours/:id',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -787,7 +778,7 @@ Accessing this endpoint will retrieve a **Year Plan** sorted with the busiest mo
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours/:year`
+> **GET** `/api/v1/tours/:year`
 
 <br>
 
@@ -800,7 +791,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}api/v1/tours/monthly-plan/2021',
+  url: 'api/v1/tours/monthly-plan/2021',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -878,7 +869,7 @@ Accessing this endpoint will retrieve, in realtime, **Various Statistics** about
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours/get-monthly-tour`
+> **GET** `/api/v1/tours/get-monthly-tour`
 
 <br>
 
@@ -889,7 +880,7 @@ Example Request
 ```javascript
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/tour-stats',
+  url: '/api/v1/tours/tour-stats',
   headers: {}
 };
 
@@ -958,7 +949,7 @@ Accessing this endpoint will retrieve all **Tours Within A Specified Radius**.<b
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours/tours-within/:distance/center/:latlng/unit/:unit`
+> **GET** `/api/v1/tours/tours-within/:distance/center/:latlng/unit/:unit`
 
 <br>
 
@@ -971,8 +962,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url:
-    '{{URL}}/api/v1/tours/tours-within/300/center/7.8831842,98.3736207/unit/km',
+  url: '/api/v1/tours/tours-within/300/center/7.8831842,98.3736207/unit/km',
   headers: {}
 };
 
@@ -1005,7 +995,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c2974",
         "name": "Scuba Dive Tour",
         "duration": 3,
         "maxGroupSize": 12,
@@ -1016,9 +1005,7 @@ Example Response
         "imageCover": "tour-9-cover.jpg",
         "locations": [],
         "slug": "scuba-dive-tour",
-        "__v": 0,
-        "durationWeeks": 0.42857142857142855,
-        "id": "5c88fa8cf4afda39709c2974"
+        "durationWeeks": 0.42857142857142855
       },
       {
         "startLocation": {},
@@ -1028,7 +1015,6 @@ Example Response
         "startDates": [],
         "secretTour": false,
         "guides": [],
-        "_id": "5c88fa8cf4afda39709c296c",
         "name": "White Water Rafting",
         "duration": 5,
         "maxGroupSize": 8,
@@ -1039,9 +1025,7 @@ Example Response
         "imageCover": "tour-7-cover.jpg",
         "locations": [],
         "slug": "white-water-rafting",
-        "__v": 0,
-        "durationWeeks": 0.7142857142857143,
-        "id": "5c88fa8cf4afda39709c296c"
+        "durationWeeks": 0.7142857142857143
       }
       4 results hidden ...
     ]
@@ -1062,7 +1046,7 @@ Accessing this endpoint will retrieve the **Distances to Tours** from a specifie
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours/distances/:location/unit/:unit`
+> **GET** `/api/v1/tours/distances/:location/unit/:unit`
 
 <br>
 
@@ -1075,7 +1059,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/distances/7.8831842,98.3736207/unit/km',
+  url: '/api/v1/tours/distances/7.8831842,98.3736207/unit/km',
   headers: {}
 };
 
@@ -1101,22 +1085,18 @@ Example Response
     "data": {
         "data": [
             {
-                "_id": "5c88fa8cf4afda39709c296c",
                 "name": "White Water Rafting",
                 "distance": 0.09421791327160058
             },
             {
-                "_id": "5c88fa8cf4afda39709c2961",
                 "name": "Phi Phi Islands",
                 "distance": 9.45049216801932
             },
             {
-                "_id": "5c88fa8cf4afda39709c2970",
                 "name": "Cave Canoeing Tour",
                 "distance": 9.45049216801932
             },
             {
-                "_id": "5c88fa8cf4afda39709c2951",
                 "name": "Similan Islands Snorkeling",
                 "distance": 90.91015879310605
             }
@@ -1140,19 +1120,19 @@ Get all Reviews for a single Tour, create new review on a single Tour.
 <br>
 
 > ```javascript
->    GET /api/v1/tours/:tourId/reviews
->   POST /api/v1/tours/:tourId/reviews
+>    GET /api/v1/tours/:id/reviews
+>   POST /api/v1/tours/:id/reviews
 > ```
 
 <br>
 
 #### **Get All Reviews on Tour**
 
-Accessing this endpoint will retrieve **All Reviews Of A Single Tour**.<br><br> \* Requires the TourId.<br>\* Accessing this Endpoint requires Authentication
+Accessing this endpoint will retrieve **All Reviews Of A Single Tour**.<br><br> \* Requires the Tour id.<br>\* Accessing this Endpoint requires Authentication
 
 <br>
 
-> **GET** `{{URL}}/api/v1/tours/:tourId/reviews`
+> **GET** `/api/v1/tours/:id/reviews`
 
 <br>
 
@@ -1165,7 +1145,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/tours/5c88fa8cf4afda39709c2951/reviews',
+  url: '/api/v1/tours/:id/reviews',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1194,21 +1174,15 @@ Example Response
     "data": [
       {
         "rating": 5,
-        "createdAt": "2020-09-19T00:53:56.848Z",
-        "_id": "5c8a379a14eb5c17645c9110",
-        "review": "Pretium vel inceptos fringilla...",
+        "review": "Pretium vel inceptos fringilla ...",
         "user": {},
-        "tour": "5c88fa8cf4afda39709c2951",
-        "id": "5c8a379a14eb5c17645c9110"
+        "tour": "5c88fa8cf4afda39709c2951"
       },
       {
         "rating": 5,
-        "createdAt": "2020-09-19T00:53:56.848Z",
-        "_id": "5c8a381714eb5c17645c9115",
         "review": "Porttitor ullamcorper rutrum ...",
         "user": {},
-        "tour": "5c88fa8cf4afda39709c2951",
-        "id": "5c8a381714eb5c17645c9115"
+        "tour": "5c88fa8cf4afda39709c2951"
       }
       7 results hidden ...
     ]
@@ -1225,11 +1199,11 @@ Example Response
 
 ### **Create New Review On Tour**
 
-Accessing this endpoint will **Create A New Review On Tour**.<br><br> \* Requires the TourId.<br>\* Accessing this Endpoint requires Authentication (only User can create new Review on Tour)
+Accessing this endpoint will **Create A New Review On Tour**.<br><br> \* Requires the Tour id.<br>\* Accessing this Endpoint requires Authentication (only User can create new Review on Tour)
 
 <br>
 
-> **POST** `{{URL}}/api/v1/tours/:tourId/reviews`
+> **POST** `/api/v1/tours/:id/reviews`
 
 <br>
 
@@ -1246,7 +1220,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
-  url: '{{URL}}/api/v1/tours/5c88fa8cf4afda39709c2951/reviews',
+  url: '/api/v1/tours/:id/reviews',
   headers: {
     Authorization: 'Bearer {{token}}',
     'Content-Type': 'application/json'
@@ -1276,12 +1250,9 @@ Example Response
         "data": {
             "rating": 5,
             "createdAt": "2020-09-23T14:34:12.870Z",
-            "_id": "5f6c3f8a3ebdbd13c8c677c1",
             "review": "Lorem taciti fringilla himenaeos",
             "tour": "5c88fa8cf4afda39709c2951",
-            "user": "5c8a1dfa2f8fb814b56fa181",
-            "__v": 0,
-            "id": "5f6c3f8a3ebdbd13c8c677c1"
+            "user": "5c8a1dfa2f8fb814b56fa181"
         }
     }
 }
@@ -1302,10 +1273,10 @@ Get all Reviews, create new ones, edit and delete Reviews.
 
 > ```javascript
 >    GET /api/v1/reviews
->    GET /api/v1/reviews/:reviewId
+>    GET /api/v1/reviews/:id
 >   POST /api/v1/reviews/
->  PATCH /api/v1/reviews/:reviewId
-> DELETE /api/v1/reviews/:reviewId
+>  PATCH /api/v1/reviews/:id
+> DELETE /api/v1/reviews/:id
 > ```
 
 <br>
@@ -1319,11 +1290,11 @@ Accessing this endpoint retrieves a **List to All Tour Objects** in the database
 
 #### **Get Default Reviews**
 
-retrieve all Tours in database<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+Accessing this Endpoint will retrieve all Review Objects in database.<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
 
 <br>
 
-> **GET** `{{URL}}/api/v1/reviews`
+> **GET** `/api/v1/reviews`
 
 <br>
 
@@ -1336,7 +1307,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/reviews',
+  url: '/api/v1/reviews',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1366,20 +1337,16 @@ Example Response
             {
                 "rating": 5,
                 "createdAt": "2020-09-23T14:34:12.870Z",
-                "_id": "5f6c3f8a3ebdbd13c8c677c1",
                 "review": "Lorem taciti fringilla himenaeos ex aliquam litora nam ad maecenas",
                 "tour": "5c88fa8cf4afda39709c2951",
-                "user": {},
-                "id": "5f6c3f8a3ebdbd13c8c677c1"
+                "user": {}
             },
             {
                 "rating": 5,
                 "createdAt": "2020-09-21T12:38:47.452Z",
-                "_id": "5f689f1354d68e2620472d0b",
                 "review": "Cool",
                 "tour": "5f68937725f7d345fc6d6f4e",
-                "user": {},
-                "id": "5f689f1354d68e2620472d0b"
+                "user": {}
             }
             62 results hidden ...
         ]
@@ -1400,7 +1367,7 @@ Example, sorting reviews by Rating (ascending)<br><br>\* Accessing this Endpoint
 
 <br>
 
-> **GET** `{{URL}}/api/v1/reviews?sort=rating`
+> **GET** `/api/v1/reviews?sort=rating`
 
 <br>
 
@@ -1413,7 +1380,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/reviews?sort=rating',
+  url: '/api/v1/reviews?sort=rating',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1443,20 +1410,16 @@ Example Response
             {
                 "rating": 1,
                 "createdAt": "2020-09-19T00:53:56.848Z",
-                "_id": "5c8a3b4714eb5c17645c912c",
                 "review": "Ridiculus facilisis sem id aenean amet penatibus gravida phasellus a mus dui lacinia accumsan!!",
                 "user": {},
-                "tour": "5c88fa8cf4afda39709c2966",
-                "id": "5c8a3b4714eb5c17645c912c"
+                "tour": "5c88fa8cf4afda39709c2966"
             },
             {
                 "rating": 2,
-                "createdAt": "2020-09-19T00:53:56.848Z",
-                "_id": "5c8a3d9b14eb5c17645c9141",
+                "createdAt": "2020-09-19T00:53:56.848Z"
                 "review": "Vitae vulputate id quam metus orci cras mollis vivamus vehicula sapien et",
                 "user": {},
-                "tour": "5c88fa8cf4afda39709c296c",
-                "id": "5c8a3d9b14eb5c17645c9141"
+                "tour": "5c88fa8cf4afda39709c296c"
             }
             62 results hidded...
         ]
@@ -1477,7 +1440,7 @@ Example, filtering reviews by Rating (greater than 4.5)<br><br>\* Accessing this
 
 <br>
 
-> **GET** `{{URL}}/api/v1/reviews?rating[gt]=4.5`
+> **GET** `/api/v1/reviews?rating[gt]=4.5`
 
 <br>
 
@@ -1490,7 +1453,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/reviews?rating[gt]=4.5',
+  url: '/api/v1/reviews?rating[gt]=4.5',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1519,21 +1482,17 @@ Example Response
         "data": [
             {
                 "rating": 5,
-                "createdAt": "2020-09-23T14:34:12.870Z",
-                "_id": "5f6c3f8a3ebdbd13c8c677c1",
+                "createdAt": "2020-09-23T14:34:12.870Z"
                 "review": "Lorem taciti fringilla himenaeos ex aliquam litora nam ad maecenas",
                 "tour": "5c88fa8cf4afda39709c2951",
-                "user": {},
-                "id": "5f6c3f8a3ebdbd13c8c677c1"
+                "user": {}
             },
             {
                 "rating": 5,
-                "createdAt": "2020-09-21T12:38:47.452Z",
-                "_id": "5f689f1354d68e2620472d0b",
+                "createdAt": "2020-09-21T12:38:47.452Z"
                 "review": "Cool",
                 "tour": "5f68937725f7d345fc6d6f4e",
-                "user": {},
-                "id": "5f689f1354d68e2620472d0b"
+                "user": {}
             },
             44 results hidded...
         ]
@@ -1554,7 +1513,7 @@ Example, **Filtering Reviews** by Rating (less then /or equal 3) **and Sorting R
 
 <br>
 
-> **GET** `{{URL}}/api/v1/reviews?rating[lte]=3&sort=-rating`
+> **GET** `/api/v1/reviews?rating[lte]=3&sort=-rating`
 
 <br>
 
@@ -1567,7 +1526,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/reviews?rating[lte]=3&sort=-rating',
+  url: '/api/v1/reviews?rating[lte]=3&sort=-rating',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1597,29 +1556,23 @@ Example Response
             {
                 "rating": 3,
                 "createdAt": "2020-09-19T00:53:56.848Z",
-                "_id": "5c8a39b614eb5c17645c9123",
                 "review": "Blandit varius nascetur est felis praesent lorem himenaeos pretium dapibus tellus bibendum consequat ac duis",
                 "user": {},
-                "tour": "5c88fa8cf4afda39709c2974",
-                "id": "5c8a39b614eb5c17645c9123"
+                "tour": "5c88fa8cf4afda39709c2974"
             },
             {
                 "rating": 2,
-                "createdAt": "2020-09-19T00:53:56.848Z",
-                "_id": "5c8a3d9b14eb5c17645c9141",
+                "createdAt": "2020-09-19T00:53:56.848Z"
                 "review": "Vitae vulputate id quam metus orci cras mollis vivamus vehicula sapien et",
                 "user": {},
-                "tour": "5c88fa8cf4afda39709c296c",
-                "id": "5c8a3d9b14eb5c17645c9141"
+                "tour": "5c88fa8cf4afda39709c296c"
             },
             {
                 "rating": 1,
-                "createdAt": "2020-09-19T00:53:56.848Z",
-                "_id": "5c8a3b4714eb5c17645c912c",
+                "createdAt": "2020-09-19T00:53:56.848Z"
                 "review": "Ridiculus facilisis sem id aenean amet penatibus gravida phasellus a mus dui lacinia accumsan!!",
                 "user": {},
-                "tour": "5c88fa8cf4afda39709c2966",
-                "id": "5c8a3b4714eb5c17645c912c"
+                "tour": "5c88fa8cf4afda39709c2966"
             }
         ]
     }
@@ -1635,11 +1588,11 @@ Example Response
 
 ### **Get Review**
 
-Accessing this endpoint retrieves a **Single Review Object**.<br><br> \* Requires the reviewId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+Accessing this endpoint retrieves a **Single Review Object**.<br><br> \* Requires the Review id.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
 
 <br>
 
-> **GET** `{{URL}}/api/v1/reviews/:reviewId`
+> **GET** `/api/v1/reviews/:id`
 
 <br>
 
@@ -1652,7 +1605,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/reviews/5c8a3a7014eb5c17645c9124',
+  url: '/api/v1/reviews/:id',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1680,12 +1633,9 @@ Example Response
         "data": {
             "rating": 5,
             "createdAt": "2020-09-19T00:53:56.848Z",
-            "_id": "5c8a3a7014eb5c17645c9124",
             "review": "Blandit varius nascetur est felis praesent lorem himenaeos pretium dapibus tellus bibendum consequat ac duis",
             "user": {},
-            "tour": "5c88fa8cf4afda39709c2955",
-            "__v": 0,
-            "id": "5c8a3a7014eb5c17645c9124"
+            "tour": "5c88fa8cf4afda39709c2955"
         }
     }
 }
@@ -1701,11 +1651,11 @@ Example Response
 ### **Create New Review**
 
 Accessing this endpoint will **Create a Single Review Object**.<br>
-Minimum required fields are review / rating / tourId and userId .<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only User can create new review)
+Minimum required fields are review / rating / Tour id and User id .<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only User can create new review)
 
 <br>
 
-> **POST** `{{URL}}/api/v1/reviews`
+> **POST** `/api/v1/reviews`
 
 <br>
 
@@ -1724,7 +1674,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
-  url: '{{URL}}/api/v1/reviews',
+  url: '/api/v1/reviews',
   headers: {
     Authorization: 'Bearer {{token}}',
     'Content-Type': 'application/json'
@@ -1753,13 +1703,10 @@ Example Response
     "data": {
         "data": {
             "rating": 4,
-            "createdAt": "2020-09-23T14:34:12.870Z",
-            "_id": "5f6c3f8a3ebdbd13c8c677c1",
+            "createdAt": "2020-09-23T14:34:12.870Z"
             "review": "Great Tour Review",
             "tour": "5c88fa8cf4afda39709c2955",
-            "user": "5f60ad886fcb613938b1c0b7",
-            "__v": 0,
-            "id": "5f6c3f8a3ebdbd13c8c677c1"
+            "user": "5f60ad886fcb613938b1c0b7"
         }
     }
 }
@@ -1774,11 +1721,11 @@ Example Response
 
 ### **Update Review**
 
-Accessing this endpoint will **Update a Single Review Object**.<br>Only the provided fields will be updated and will return the entire Updated Review Object.<br><br>\* Requires the reviewId.<br>\* Accessing this Endpoint requires Authentication (only User and Admin can update Review)
+Accessing this endpoint will **Update a Single Review Object**.<br>Only the provided fields will be updated and will return the entire Updated Review Object.<br><br>\* Requires the Review id.<br>\* Accessing this Endpoint requires Authentication (only User and Admin can update Review)
 
 <br>
 
-> **PATCH** `{{URL}}/api/v1/reviews/:reviewId`
+> **PATCH** `/api/v1/reviews/:id`
 
 <br>
 
@@ -1794,7 +1741,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'patch',
-  url: '{{URL}}/api/v1/reviews/5f6c3f8a3ebdbd13c8c677c1',
+  url: '/api/v1/reviews/:id',
   headers: {
     Authorization: 'Bearer {{token}}',
     'Content-Type': 'application/json'
@@ -1824,12 +1771,9 @@ Example Response
         "data": {
             "rating": 4,
             "createdAt": "2020-09-23T14:34:12.870Z",
-            "_id": "5f6c3f8a3ebdbd13c8c677c1",
             "review": "Lorem taciti fringilla himenaeos ex aliquam litora nam ad maecenas",
             "tour": "5c88fa8cf4afda39709c2951",
-            "user": {},
-            "__v": 0,
-            "id": "5f6c3f8a3ebdbd13c8c677c1"
+            "user": {}
         }
     }
 }
@@ -1844,11 +1788,11 @@ Example Response
 
 ### **Delete Review**
 
-Accessing this endpoint will **Delete a Single Review Object**.<br><br> \* Requires the reviewId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only User and Admin can delete review)
+Accessing this endpoint will **Delete a Single Review Object**.<br><br> \* Requires the Review id.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only User and Admin can delete review)
 
 <br>
 
-> **DELETE** `{{URL}}/api/v1/reviews/:reviewId`
+> **DELETE** `/api/v1/reviews/:id`
 
 <br>
 
@@ -1861,7 +1805,7 @@ var axios = require('axios');
 
 var config = {
   method: 'delete',
-  url: '{{URL}}/api/v1/reviews/5f6c3f8a3ebdbd13c8c677c1',
+  url: '/api/v1/reviews/:id',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1901,9 +1845,9 @@ Get all Users, edit and delete Users. <br><br>\* Accessing this Endpoint require
 
 > ```javascript
 >    GET /api/v1/users
->    GET /api/v1/users/:userId
->  PATCH /api/v1/users/:userId
-> DELETE /api/v1/users/:userId
+>    GET /api/v1/users/:id
+>  PATCH /api/v1/users/:id
+> DELETE /api/v1/users/:id
 > ```
 
 <br>
@@ -1915,7 +1859,7 @@ Accessing this endpoint retrieves a **List to All User Objects** in the database
 
 <br>
 
-> **GET** `{{URL}}/api/v1/users`
+> **GET** `/api/v1/users`
 
 <br>
 
@@ -1928,7 +1872,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/users',
+  url: '/api/v1/users',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -1957,19 +1901,15 @@ Example Response
         "data": [
             {
                 "role": "user",
-                "_id": "5c8a1dfa2f8fb814b56fa181",
                 "name": "Lourdes Browning",
                 "email": "loulou@example.com",
-                "photo": "user-2.jpg",
-                "passwordChangedAt": "2020-09-19T01:04:54.622Z"
+                "photo": "user-2.jpg"
             },
             {
-                "role": "user",
-                "_id": "5c8a1e1a2f8fb814b56fa182",
+                "role": "user"
                 "name": "Sophie Louise Hart",
                 "email": "sophie@example.com",
-                "photo": "user-3.jpg",
-                "passwordChangedAt": "2020-09-19T01:05:36.432Z"
+                "photo": "user-3.jpg"
             }
             18 results hidden ...
         ]
@@ -1986,11 +1926,11 @@ Example Response
 
 ### **Get User**
 
-Accessing this endpoint retrieves a **Single User Object**.<br><br>\* Requires the userId<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
+Accessing this endpoint retrieves a **Single User Object**.<br><br>\* Requires the User id<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
 
 <br>
 
-> **GET** `{{URL}}/api/v1/users/:userId`
+> **GET** `/api/v1/users/:id`
 
 <br>
 
@@ -2003,7 +1943,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: '{{URL}}/api/v1/users/5c8a1dfa2f8fb814b56fa181',
+  url: '/api/v1/users/:id',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -2030,7 +1970,6 @@ Example Response
     "data": {
         "data": {
             "role": "user",
-            "_id": "5c8a1dfa2f8fb814b56fa181",
             "name": "Lourdes Browning",
             "email": "loulou@example.com",
             "photo": "user-2.jpg"
@@ -2048,11 +1987,11 @@ Example Response
 
 ### **Update User**
 
-Accessing this endpoint will **Update a Single User Object**.<br>Only the provided fields will be updated and will return the entire Updated User Object<br><br>\* Requires the userId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
+Accessing this endpoint will **Update a Single User Object**.<br>Only the provided fields will be updated and will return the entire Updated User Object<br><br>\* Requires the User id.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
 
 <br>
 
-> **PATCH** `{{URL}}/api/v1/users/:userId`
+> **PATCH** `/api/v1/users/:id`
 
 <br>
 
@@ -2068,7 +2007,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'patch',
-  url: '{{URL}}/api/v1/users/5c8a1dfa2f8fb814b56fa181',
+  url: '/api/v1/users/:id',
   headers: {
     Authorization: 'Bearer {{token}}',
     'Content-Type': 'application/json'
@@ -2097,7 +2036,6 @@ Example Response
     "data": {
         "data": {
             "role": "user",
-            "_id": "5c8a1dfa2f8fb814b56fa181",
             "name": "Lourdes Michelle Browning",
             "email": "loulou@example.com",
             "photo": "user-2.jpg"
@@ -2115,11 +2053,11 @@ Example Response
 
 ### **Delete User**
 
-Accessing this endpoint will **Delete a Single User Object**.<br><br> \* Requires the userId.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, Admin can delete user)
+Accessing this endpoint will **Delete a Single User Object**.<br><br> \* Requires the User id.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, Admin can delete user)
 
 <br>
 
-> **DELETE** `{{URL}}/api/v1/users/:userId`
+> **DELETE** `/api/v1/users/:id`
 
 <br>
 
@@ -2132,7 +2070,7 @@ var axios = require('axios');
 
 var config = {
   method: 'delete',
-  url: '{{URL}}/api/v1/users/5f6485acbb1dde33603e2ef4',
+  url: '/api/v1/users/:id',
   headers: {
     Authorization: 'Bearer {{token}}'
   }
@@ -2163,6 +2101,541 @@ Example Response
 
 <br>
 <br>
+
+## **Authentication** Endpoints
+
+Signup, login, reset and update current user password, updated current user data and delete Current User.
+
+<br>
+
+> ```javascript
+>   POST /api/v1/users/signup
+>   POST /api/v1/users/login
+>   POST /api/v1/users/forgotPassword
+>  PATCH /api/v1/users/resetPassword/:token
+>    GET /api/v1/users/me
+>  PATCH /api/v1/users/updateMe
+>  PATCH /api/v1/users/updateMyPassword
+> DELETE /api/v1/users/deleteMe
+> ```
+
+<br>
+<br>
+
+### **Sign Up**
+
+Accessing this endpoint will **Create a Single User Object**.<br><br> \* Requires the name, email, password and passwordConfirm fields.
+
+<br>
+
+> **POST** `/api/v1/users/signup`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  name: 'test user',
+  email: 'testuser@example.com',
+  password: 'pass1234',
+  passwordConfirm: 'pass1234'
+});
+
+var config = {
+  method: 'post',
+  url: '/api/v1/users/signup',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 201 Created`
+
+```javascript
+{
+    "status": "success",
+    "token": "{{token}}",
+    "data": {
+        "user": {
+            "role": "user",
+            "active": true,
+            "name": "test user",
+            "email": "testuser@example.com"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+### **Login**
+
+Accessing this endpoint will **Authenticate a Single User**.<br>A Token will be set to cookie and returned in the response along with the entire User Object.<br><br>\* Requires the email and password fields.
+
+<br>
+
+> **POST** `/api/v1/users/signup`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  email: 'testuser@example.com',
+  password: 'pass1234'
+});
+
+var config = {
+  method: 'post',
+  url: '/api/v1/users/login',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "token": "{{token}}",
+    "data": {
+        "user": {
+            "role": "user",
+            "name": "test user",
+            "email": "testuser@example.com"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+### **Forgot Password**
+
+Accessing this endpoint will **Send Password Recovey Link via Email**.<br>The Link contains a token valid for 30 minutes only.<br><br>\* Requires the email field.
+
+<br>
+
+> **POST** `/api/v1/users/forgotPassword`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  email: 'testuser@example.com'
+});
+
+var config = {
+  method: 'post',
+  url: '/api/v1/users/forgotPassword',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "message": "Token sent to email!"
+}
+```
+
+<br>
+
+Example Email
+
+```
+Forgot your Password ? Reset your Password by following the link below:
+
+/api/v1/users/resetPassword/:token
+
+If you didn't forget your password, please ignore this email!
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+### **Reset Password**
+
+Accessing this endpoint allow the user to **Change the Password**.<br>A new Token will be set to cookie and returned in the response along with the entire User Object.<br><br>\* Requires the password and passwordConfirm fields.
+
+<br>
+
+> **PATCH** `/api/v1/users/forgotPassword/:token`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  password: 'resetpass1234',
+  passwordConfirm: 'resetpass1234'
+});
+
+var config = {
+  method: 'patch',
+  url: '/api/v1/users/resetPassword/{{token}}',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "token": "{{token}}",
+    "data": {
+        "user": {
+            "role": "user",
+            "name": "test user",
+            "email": "testuser@example.com"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+### **Get Current User**
+
+Accessing this endpoint will retrieve the **Current User Object**.<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **GET** `/api/v1/users/me`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '/api/v1/users/me',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "role": "user",
+            "name": "test user",
+            "email": "testuser@example.com"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+### **Update Current User Data**
+
+Accessing this endpoint will **Update Current User Data** and will return the entire Updated User Object.<br><br>\* This route is not for password updates! instead use [Update Current User Password](#update-current-user-password)<br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **PATCH** `/api/v1/users/updateMe`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  name: 'Test User Name'
+});
+
+var config = {
+  method: 'patch',
+  url: '/api/v1/users/updateMe',
+  headers: {
+    Authorization: 'Bearer {{token}}',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "role": "user",
+            "name": "Test User Name",
+            "email": "testuser@example.com"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+### **Update Current User Password**
+
+Accessing this endpoint will **Update Current User Password**.<br> Also, will update the token and will return the entire Updated User Object.<br><br>\* Requires currentPassword, password and passwordConfirm fields.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **PATCH** `/api/v1/users/updateMe`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+var data = JSON.stringify({
+  passwordCurrent: 'pass1234',
+  password: 'newpass1234',
+  passwordConfirm: 'newpass1234'
+});
+
+var config = {
+  method: 'patch',
+  url: '/api/v1/users/updateMyPassword',
+  headers: {
+    Authorization: 'Bearer {{token}}',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "token": "{{token}}",
+    "data": {
+        "user": {
+            "role": "user",
+            "name": "Test User Name",
+            "email": "testuser@example.com"
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
+
+<br>
+<br>
+
+<br>
+<br>
+
+### **Delete Current User**
+
+Accessing this endpoint will **Update Current User Password**.<br> Also, will update the token and will return the entire Updated User Object.<br><br>\* Requires currentPassword, password and passwordConfirm fields.<br>\* Accessing this Endpoint requires Authentication (must be logged in to access)
+
+<br>
+
+> **DELETE** `/api/v1/users/deleteMe`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'delete',
+  url: '/api/v1/users/deleteMe',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 204 No Content`
+
+```javascript
+// empty - no content will be displayed
+```
+
+<br>
+
+[**^ Back to Top**](#authentication)
 
 <br>
 <br>
