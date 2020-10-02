@@ -31,7 +31,7 @@ body {
   line-height: 1.6;
   font-weight: 300;
   font-family: 'Lato', sans-serif;
-  color: #777;
+  color: #222;
   padding: 0;
   min-height: 100vh;
   display: -webkit-box;
@@ -376,7 +376,7 @@ body {
     to(#28b487)
   );
   background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
-  opacity: 0.85;
+  opacity: 0.55;
 }
 
 .heading-box {
@@ -836,7 +836,7 @@ body {
   margin-left: 1.5rem;
 }
 .footer__nav a {
-  color: #777;
+  color: #222;
   text-decoration: none !important;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -847,7 +847,7 @@ body {
 }
 .footer__copyright {
   justify-self: end;
-  color: #999;
+  color: #333;
 }
 @media only screen and (max-width: 50em) {
   .footer__copyright {
@@ -1177,7 +1177,7 @@ body {
   font-weight: 700;
 }
 .card__footer-text {
-  color: #999;
+  color: #333;
 }
 .card__ratings {
   grid-row: 2 / 3;

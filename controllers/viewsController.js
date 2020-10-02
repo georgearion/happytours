@@ -15,8 +15,19 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getTour = (req, res) => {
+exports.getTour = catchAsync(async (req, res, next) => {
+  // 1) get data, for requested Tour (including reviews and guides)
+  const tour = await Tour.findOne({ slug: req.params.slug }).populate(
+    'reviews'
+  );
+  // 2) Build template
+
+  // 3) Render template using data from 1)
+
+  console.log(tour);
+
   res.status(200).render('tour', {
-    title: 'Placeholder Title'
+    title: 'Placeholder Title',
+    tour
   });
-};
+});
