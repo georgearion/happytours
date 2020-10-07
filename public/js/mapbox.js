@@ -1,10 +1,8 @@
 /* eslint-disable */
-const mapEl = document.getElementById('map');
 
-if (mapEl) {
-  const locations = JSON.parse(mapEl.dataset.locations);
-  //console.log(locations);
 
+
+export const displayMap = locations => {
   mapboxgl.accessToken =
     'pk.eyJ1IjoiZ2VvcmdlYXJpb24iLCJhIjoiY2tmeHkzenNhMjR6dzJ5bXp2bWptcmVqbyJ9.gM4bc8pjaQb38Ur7coqyVA';
 
@@ -53,4 +51,4 @@ if (mapEl) {
       right: 200
     }
   });
-}
+};
