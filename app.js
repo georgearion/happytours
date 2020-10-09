@@ -56,6 +56,14 @@ app.use(
   })
 );
 
+// Parse date coming from an url encoded form
+app.use(
+  express.urlencoded({
+    extended: true,
+    limit: '10kb'
+  })
+);
+
 // Cookie parser, reading data from browser cookies
 app.use(cookieParser());
 
