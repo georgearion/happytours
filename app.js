@@ -27,13 +27,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Set security HTTP Headers
-//app.use(helmet());
-// This disables the `contentSecurityPolicy` middleware but keeps the rest.
-// TODO - find a workaround ?
-// https://docs.mapbox.com/mapbox-gl-js/api/#csp-directives
+// https://helmetjs.github.io/
+// app.use(helmet());
+// Includes all 11 middlewares, setting an option for 'contentSecurityPolicy'
 app.use(
-  helmet({
-    contentSecurityPolicy: false
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
+      baseUri: ["'self'"],
+      fontSrc: ["'self'", 'https:', 'http:', 'data:'],
+      scriptSrc: ["'self'", 'https:', 'http:', 'blob:'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https:', 'http:'],
+      imgSrc: ["'self'", 'data:', 'blob:']
+    }
   })
 );
 
