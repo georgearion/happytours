@@ -8478,46 +8478,75 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var signup = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(name, email, password, passwordConfirm, signupBtn) {
+    var res;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            console.log('__signup');
-            (0, _alerts.showAlert)('success', 'Signup for free!'); //email, password
-            // try {
-            //   const res = await axios({
-            //     method: 'POST',
-            //     url: 'http://127.0.0.1:3000/api/v1/users/login',
-            //     data: {
-            //       email,
-            //       password
-            //     }
-            //   });
-            //   if (res.data.status === 'success') {
-            //     showAlert('success', 'Logged in successfully!');
-            //     window.setTimeout(() => {
-            //       location.assign('/');
-            //     }, 1500);
-            //   }
-            // } catch (err) {
-            //   showAlert('error', err.response.data.message);
-            // }
+            signupBtn.textContent = 'Processing...';
 
-          case 2:
+            if (validateInput(password, passwordConfirm)) {
+              _context.next = 5;
+              break;
+            }
+
+            passwordConfirm.focus();
+            signupBtn.textContent = 'Sign Up';
+            return _context.abrupt("return", (0, _alerts.showAlert)('error', 'Password missmatch!'));
+
+          case 5:
+            _context.prev = 5;
+            _context.next = 8;
+            return (0, _axios.default)({
+              method: 'POST',
+              url: 'http://127.0.0.1:3000/api/v1/users/signup',
+              data: {
+                name: name.value,
+                email: email.value,
+                password: password.value,
+                passwordConfirm: passwordConfirm.value
+              }
+            });
+
+          case 8:
+            res = _context.sent;
+
+            if (res.data.status === 'success') {
+              (0, _alerts.showAlert)('success', 'Sign up successfully!');
+              window.setTimeout(function () {
+                location.assign('/');
+              }, 1500);
+            }
+
+            _context.next = 17;
+            break;
+
+          case 12:
+            _context.prev = 12;
+            _context.t0 = _context["catch"](5);
+            console.log(_context.t0);
+            signupBtn.textContent = 'Sign Up';
+            (0, _alerts.showAlert)('error', _context.t0.response.data.message);
+
+          case 17:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee);
+    }, _callee, null, [[5, 12]]);
   }));
 
-  return function signup() {
+  return function signup(_x, _x2, _x3, _x4, _x5) {
     return _ref.apply(this, arguments);
   };
 }();
 
 exports.signup = signup;
+
+var validateInput = function validateInput(pass, passConfirm) {
+  return !(pass.value != passConfirm.value);
+};
 },{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js"}],"login.js":[function(require,module,exports) {
 "use strict";
 
@@ -9048,9 +9077,13 @@ if (mapBox) {
 if (signupForm) {
   signupForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    (0, _signup.signup)(); // const email = document.getElementById('email').value;
-    // const password = document.getElementById('password').value;
-    // signup(email, password);
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+    var passwordConfirm = document.getElementById('passwordConfirm');
+    var signupButton = document.querySelector('button.btn-signup');
+    console.log(signupButton);
+    (0, _signup.signup)(name, email, password, passwordConfirm, signupButton);
   });
 }
 

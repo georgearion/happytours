@@ -24,11 +24,13 @@ if (mapBox) {
 if (signupForm) {
   signupForm.addEventListener('submit', e => {
     e.preventDefault();
-
-    signup();
-    // const email = document.getElementById('email').value;
-    // const password = document.getElementById('password').value;
-    // signup(email, password);
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const passwordConfirm = document.getElementById('passwordConfirm');
+    const signupButton = document.querySelector('button.btn-signup');
+    console.log(signupButton);
+    signup(name, email, password, passwordConfirm, signupButton);
   });
 }
 
