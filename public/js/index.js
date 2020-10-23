@@ -29,7 +29,6 @@ if (signupForm) {
     const password = document.getElementById('password');
     const passwordConfirm = document.getElementById('passwordConfirm');
     const signupButton = document.querySelector('button.btn-signup');
-    console.log(signupButton);
     signup(name, email, password, passwordConfirm, signupButton);
   });
 }

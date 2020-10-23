@@ -8519,17 +8519,16 @@ var signup = /*#__PURE__*/function () {
               }, 1500);
             }
 
-            _context.next = 17;
+            _context.next = 16;
             break;
 
           case 12:
             _context.prev = 12;
             _context.t0 = _context["catch"](5);
-            console.log(_context.t0);
             signupBtn.textContent = 'Sign Up';
             (0, _alerts.showAlert)('error', _context.t0.response.data.message);
 
-          case 17:
+          case 16:
           case "end":
             return _context.stop();
         }
@@ -9082,7 +9081,6 @@ if (signupForm) {
     var password = document.getElementById('password');
     var passwordConfirm = document.getElementById('passwordConfirm');
     var signupButton = document.querySelector('button.btn-signup');
-    console.log(signupButton);
     (0, _signup.signup)(name, email, password, passwordConfirm, signupButton);
   });
 }

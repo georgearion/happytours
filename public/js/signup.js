@@ -35,7 +35,6 @@ export const signup = async (
       }, 1500);
     }
   } catch (err) {
-    console.log(err);
     signupBtn.textContent = 'Sign Up';
     showAlert('error', err.response.data.message);
   }
