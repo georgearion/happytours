@@ -299,6 +299,39 @@ body {
   outline-offset: 3px;
 }
 
+.btn-link,
+.btn-link:link,
+.btn-link:visited {
+  color: #55c57a;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-link:hover,
+.btn-link:active {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  text-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--signup {
+  float: right;
+  padding: 0.9rem 3rem;
+}
+
 .header {
   background-color: #444;
   padding: 0 5rem;
@@ -1222,6 +1255,9 @@ body {
   max-width: 50rem;
   margin: 0 auto;
 }
+
+.reset-form,
+.forgot-form,
 .signup-form,
 .login-form {
   margin: 0 auto;
