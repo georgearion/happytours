@@ -1,98 +1,157 @@
-# HappyTours - RESTful API
+# **HappyTours** - RESTful API
 
-v1
+**v1**
 
 The HappyTours API is organized around REST. This API contains endpoints for **Tours**, **Reviews**, **Users**, **Bookings** and **Authentication** and has predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response code authentication, and verbs.
 
 <br>
 <br>
 
-### Table of Contents
+### **Table of Contents**
 
 <hr>
+<br>
 
-- ### [**TOURS**](#tours-endpoints)
+<details>
+<summary>
+<b id="tours-head">TOURS</b> ENDPOINTS
 
-  - #### [**Get All Tours**](#get-all-tours-endpoints)
+</summary>
 
-    - [Get Default Tours](#get-default-tours)
+<br>
 
-    - [Sorting Tours](#sorting-tours)
-    - [Filtering Tours](#filtering-tours)
-    - [Combination, Sorting and Filtering Tours](#combination-sorting-and-filtering-tours)
+- #### [**Get All Tours**](#tours-endpoints)
 
-  - [**Get Tour**](#get-tour)
+  - [Get Default Tours](#get-default-tours)
 
-  - [**Create New Tour**](#create-new-tour)
-  - [**Update Tour**](#update-tour)
-  - [**Delete Tour**](#delete-tour)
+  - [Sorting Tours](#sorting-tours)
+  - [Filtering Tours](#filtering-tours)
+  - [Combination, Sorting and Filtering Tours](#combination-sorting-and-filtering-tours)
 
-  - #### [**Tours - Special Routes**](#tours---special-routes-endpoints)
+- [**Get Tour**](#get-tour)
 
-    - [Get Monthly Plan](#get-monthly-plan)
+- [**Create New Tour**](#create-new-tour)
+- [**Update Tour**](#update-tour)
+- [**Delete Tour**](#delete-tour)
 
-    - [Get Tour Stats](#get-tour-stats)
-    - [Get Tours Within Radius](#get-tours-within-radius)
-    - [Get Distances To Tours From Location](#get-distances-to-tours-from-location)
+<br>
 
-  - #### [**Tours / Reviews**](#tours--reviews-endpoints)
+- #### [**TOURS - SPECIAL ROUTES**](#tours---special-routes-endpoints)
 
-    - [Get All Reviews on Tour](#get-all-reviews-on-tour)
+  - [Get Monthly Plan](#get-monthly-plan)
 
-    - [Create New Review on Tour](#create-new-review-on-tour)
+  - [Get Tour Stats](#get-tour-stats)
+  - [Get Tours Within Radius](#get-tours-within-radius)
+  - [Get Distances To Tours From Location](#get-distances-to-tours-from-location)
 
-  - #### [**Tours / Bookings**](#tours--bookings-endpoints)
+<br>
 
-    - [Get All Bookings on Tour](#get-all-bookings-on-tour)
+- #### [**TOURS / REVIEWS**](#tours--reviews-endpoints)
 
-- ### [**REVIEWS**](#reviews-endpoints)
+  - [Get All Reviews on Tour](#get-all-reviews-on-tour)
 
-  - #### [**Get All Reviews**](#get-all-reviews-endpoints)
+  - [Create New Review on Tour](#create-new-review-on-tour)
 
-    - [Get Default Reviews](#get-default-reviews)
+<br>
 
-    - [Sorting Reviews](#sorting-reviews)
-    - [Filtering Reviews](#filtering-reviews)
-    - [Combination, Sorting and Filtering Reviews](#combination-sorting-and-filtering-reviews)
+- #### [**TOURS / BOOKINGS**](#tours--bookings-endpoints)
 
-  - [**Get Review**](#get-review)
+  - [Get All Bookings on Tour](#get-all-bookings-on-tour)
 
-  - [**Create New Review**](#create-new-review)
-  - [**Update Review**](#update-review)
-  - [**Delete Review**](#delete-review)
+</details>
 
-* ### [**USERS**](#users-endpoints)
+<br>
 
-  - [**Get All Users**](#get-all-users)
+<details>
+<summary>
+<b>REVIEWS</b> ENDPOINTS
 
-  - [**Get User**](#get-user)
-  - [**Update User**](#update-user)
-  - [**Delete User**](#delete-user)
+</summary>
 
-  - #### [**Users / Bookings**](#users--bookings-endpoints)
+<br>
 
-    - [Get All Bookings on User](#get-all-bookings-on-user)
+- #### [**Get All Reviews**](#reviews-endpoints)
 
-* ### [**BOOKINGS**](#bookings-endpoints)
+  - [Get Default Reviews](#get-default-reviews)
 
-  - [**Get All Bookings**](#get-all-bookings)
+  - [Sorting Reviews](#sorting-reviews)
+  - [Filtering Reviews](#filtering-reviews)
+  - [Combination, Sorting and Filtering Reviews](#combination-sorting-and-filtering-reviews)
 
-  - [**Get Booking**](#get-booking)
+- [**Get Review**](#get-review)
 
-* ### [**AUTHENTICATION**](#authentication-endpoints)
+- [**Create New Review**](#create-new-review)
+- [**Update Review**](#update-review)
+- [**Delete Review**](#delete-review)
 
-  - [**Sign Up**](#sign-up)
+</details>
 
-  - [**Login**](#login)
-  - [**Forgot Password**](#forgot-password)
-  - [**Reset Password**](#reset-password)
-  - [**Get Current User**](#get-current-user)
-  - [**Update Current User Data**](#update-current-user-data)
-  - [**Update Current User Password**](#update-current-user-password)
-  - [**Delete Current User**](#delete-current-user)
+<br>
+
+<details>
+<summary>
+<b>USERS</b> ENDPOINTS
+
+</summary>
+
+<br>
+
+- [**Get All Users**](#users-endpoints)
+
+- [**Get User**](#get-user)
+- [**Update User**](#update-user)
+- [**Delete User**](#delete-user)
+
+<br>
+
+- #### [**USERS / BOOKINGS**](#users--bookings-endpoints)
+
+  - [Get All Bookings on User](#get-all-bookings-on-user)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>BOOKINGS</b> ENDPOINTS
+
+</summary>
+
+<br>
+
+- [**Get All Bookings**](#bookings-endpoints)
+
+- [**Get Booking**](#get-booking)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>AUTHENTICATION</b>
+
+</summary>
+
+<br>
+
+- [**Sign Up**](#authentication-endpoints)
+
+- [**Login**](#login)
+- [**Forgot Password**](#forgot-password)
+- [**Reset Password**](#reset-password)
+- [**Get Current User**](#get-current-user)
+- [**Update Current User Data**](#update-current-user-data)
+- [**Update Current User Password**](#update-current-user-password)
+- [**Delete Current User**](#delete-current-user)
+
+</details>
 
 <br>
 <hr>
+
+<br>
 <br>
 <br>
 
@@ -131,7 +190,10 @@ retrieve all Tours in database
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -151,9 +213,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -188,10 +258,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#get-all-tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -207,7 +282,10 @@ Example, sorting tours by Duration (number of days in ascending order)
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -227,9 +305,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -285,10 +371,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#get-all-tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -304,7 +395,10 @@ Example, filtering tours by Rating (greater than 4.8)
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -324,9 +418,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -361,10 +463,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#get-all-tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -380,7 +487,10 @@ Example, **Filtering Tours** by Duration (less then /or equal 3 days) **and Sort
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -400,9 +510,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -457,10 +575,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#get-all-tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -476,7 +599,10 @@ Accessing this endpoint retrieves a **Single Tour Object**.<br><br> \* Requires 
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -496,9 +622,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -531,10 +665,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -551,7 +690,10 @@ Minimum required fields are name / duration / maxGrupSize / difficulty / price /
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -590,9 +732,19 @@ axios(config)
   });
 ```
 
+</details>
+
+<br>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 201 Created`
 
@@ -632,10 +784,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -651,7 +808,10 @@ Accessing this endpoint will **Update a Single Tour Object**.<br>Only the provid
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -679,9 +839,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -721,10 +889,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -740,7 +913,10 @@ Accessing this endpoint will **Delete a Single Tour Object**.<br><br> \* Require
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -762,9 +938,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 204 No Content`
 
@@ -772,10 +956,15 @@ Example Response
 // empty - no content will be displayed
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -788,7 +977,7 @@ Contains endpoints to special requirements such as various statistics, distances
 
 #### **Get Monthly Plan**
 
-Accessing this endpoint will retrieve a **Year Plan** sorted with the busiest months at the top.<br><br> \* Requires the Year in "YYYY" format.<br>\* Accessing this Endpoint requires Authentication (restricted to Admin and Lead-Guide and Guide)
+Accessing this endpoint will retrieve a **Year Plan** sorted with the busiest months at the top.<br><br> \* Requires the Year in "YYYY" format.<br>\* Accessing this Endpoint requires Authentication (restricted to Admin, Lead-Guide and Guide)
 
 <br>
 
@@ -798,7 +987,10 @@ Accessing this endpoint will retrieve a **Year Plan** sorted with the busiest mo
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -820,9 +1012,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -870,10 +1070,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours---special-routes)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -889,7 +1094,10 @@ Accessing this endpoint will retrieve, in realtime, **Various Statistics** about
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var config = {
@@ -907,9 +1115,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 201 Created`
 
@@ -950,10 +1166,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours---special-routes)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -969,7 +1190,10 @@ Accessing this endpoint will retrieve all **Tours Within A Specified Radius**.<b
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -989,9 +1213,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1047,10 +1279,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours---special-routes)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1066,7 +1303,10 @@ Accessing this endpoint will retrieve the **Distances to Tours** from a specifie
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1086,9 +1326,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1120,10 +1368,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours---special-routes)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1152,7 +1405,10 @@ Accessing this endpoint will retrieve **All Reviews Of A Single Tour**.<br><br> 
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1174,9 +1430,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1204,10 +1468,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours--reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1223,7 +1492,10 @@ Accessing this endpoint will **Create A New Review On Tour**.<br><br> \* Require
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1251,9 +1523,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 201 Created`
 
@@ -1272,10 +1552,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours--reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1285,9 +1570,7 @@ Get all Bookings for a single Tour.
 
 <br>
 
-> ```javascript
->    GET /api/v1/tours/:id/bookings
-> ```
+> **GET** `/api/v1/tours/:id/bookings`
 
 <br>
 
@@ -1303,7 +1586,10 @@ Accessing this endpoint will retrieve **All Bookings Of A Single Tour**.<br><br>
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1325,9 +1611,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1339,47 +1633,46 @@ Example Response
         "data": [
             {
                 "createdAt": "2020-10-22T05:46:04.981Z",
+                "price": 497,
                 "paid": true,
-                "_id": "5f913b3ca633c81ed4eb39d8",
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com",
+                },
                 "tour": {
+                    "name": "Grand Palace",
                     "guides": [
                         {
                             "photo": "user-12.jpg",
                             "role": "lead-guide",
-                            "_id": "5c8a22c62f8fb814b56fa18b",
                             "name": "Miyah Myles",
                             "email": "miyah@example.com"
                         },
                         {
                             "photo": "user-6.jpg",
                             "role": "guide",
-                            "_id": "5c8a1f4e2f8fb814b56fa185",
                             "name": "Jennifer Hardy",
                             "email": "jennifer@example.com"
                         }
-                    ],
-                    "_id": "5c88fa8cf4afda39709c2955",
-                    "name": "Grand Palace",
-                    "id": "5c88fa8cf4afda39709c2955"
-                },
-                "user": {
-                    "photo": "user-14.jpg",
-                    "role": "user",
-                    "_id": "5c8a23c82f8fb814b56fa18d",
-                    "name": "Laura Wilson",
-                    "email": "laura@example.com",
-                },
-                "price": 497
+                    ]
+                }
             }
         ]
     }
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#tours--bookings)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1418,7 +1711,10 @@ Accessing this Endpoint will retrieve all Review Objects in database.<br><br>\* 
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1440,9 +1736,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1472,10 +1776,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1491,7 +1800,10 @@ Example, sorting reviews by Rating (ascending)<br><br>\* Accessing this Endpoint
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1513,9 +1825,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1545,10 +1865,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1564,7 +1889,10 @@ Example, filtering reviews by Rating (greater than 4.5)<br><br>\* Accessing this
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1586,9 +1914,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1618,10 +1954,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1637,7 +1978,10 @@ Example, **Filtering Reviews** by Rating (less then /or equal 3) **and Sorting R
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1659,9 +2003,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1697,10 +2049,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1716,7 +2073,10 @@ Accessing this endpoint retrieves a **Single Review Object**.<br><br> \* Require
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1738,9 +2098,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1759,10 +2127,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1779,7 +2152,10 @@ Minimum required fields are review / rating / Tour id and User id .<br><br>\* Ac
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1809,9 +2185,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 201 Created`
 
@@ -1830,10 +2214,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1849,7 +2238,10 @@ Accessing this endpoint will **Update a Single Review Object**.<br>Only the prov
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1876,9 +2268,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -1897,10 +2297,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1916,7 +2321,10 @@ Accessing this endpoint will **Delete a Single Review Object**.<br><br> \* Requi
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -1938,9 +2346,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 204 No Content`
 
@@ -1948,10 +2364,15 @@ Example Response
 // empty - no content will be displayed
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#reviews)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -1983,7 +2404,10 @@ Accessing this endpoint retrieves a **List to All User Objects** in the database
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2005,9 +2429,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2035,10 +2467,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#users)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2054,7 +2491,10 @@ Accessing this endpoint retrieves a **Single User Object**.<br><br>\* Requires t
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2076,9 +2516,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2096,10 +2544,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#users)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2115,7 +2568,10 @@ Accessing this endpoint will **Update a Single User Object**.<br>Only the provid
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2142,9 +2598,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2162,10 +2626,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#users)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2181,7 +2650,10 @@ Accessing this endpoint will **Delete a Single User Object**.<br><br> \* Require
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2203,9 +2675,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 204 No Content`
 
@@ -2213,10 +2693,15 @@ Example Response
 // empty - no content will be displayed
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#users)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2244,7 +2729,10 @@ Accessing this endpoint will retrieve **All Bookings Of A Single User**.<br><br>
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2266,9 +2754,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2280,90 +2776,80 @@ Example Response
         "data": [
             {
                 "createdAt": "2020-10-22T08:27:53.952Z",
+                "price": 397,
                 "paid": true,
-                "_id": "5f914a2865ecda1ae4868cec",
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com"
+                },
                 "tour": {
+                    "name": "Similan Islands",
                     "guides": [
                         {
                             "photo": "user-10.jpg",
                             "role": "lead-guide",
-                            "_id": "5c8a21d02f8fb814b56fa189",
                             "name": "Steve T. Scaife",
                             "email": "steve@example.com"
                         },
                         {
                             "photo": "user-7.jpg",
                             "role": "guide",
-                            "_id": "5c8a201e2f8fb814b56fa186",
                             "name": "Kate Morrison",
                             "email": "kate@example.com"
                         },
                         {
-                            "photo": "user-5c8a1f292f8fb814b56fa184-1603171304236.jpeg",
+                            "photo": "user-5.jpg",
                             "role": "guide",
-                            "_id": "5c8a1f292f8fb814b56fa184",
                             "name": "Leo Gillespie",
                             "email": "leo@example.com"
                         }
-                    ],
-                    "_id": "5c88fa8cf4afda39709c2951",
-                    "name": "Similan Islands",
-                    "id": "5c88fa8cf4afda39709c2951"
-                },
-                "user": {
-                    "photo": "user-14.jpg",
-                    "role": "user",
-                    "_id": "5c8a23c82f8fb814b56fa18d",
-                    "name": "Laura Wilson",
-                    "email": "laura@example.com",
-                    "passwordChangedAt": "2020-10-15T10:06:02.014Z"
-                },
-                "price": 397
+                    ]
+                }
             },
             {
                 "createdAt": "2020-10-22T05:46:04.981Z",
+                "price": 497,
                 "paid": true,
-                "_id": "5f913b3ca633c81ed4eb39d8",
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com"
+                },
                 "tour": {
+                    "name": "Grand Palace",
                     "guides": [
                         {
                             "photo": "user-12.jpg",
                             "role": "lead-guide",
-                            "_id": "5c8a22c62f8fb814b56fa18b",
                             "name": "Miyah Myles",
                             "email": "miyah@example.com"
                         },
                         {
                             "photo": "user-6.jpg",
                             "role": "guide",
-                            "_id": "5c8a1f4e2f8fb814b56fa185",
                             "name": "Jennifer Hardy",
                             "email": "jennifer@example.com"
                         }
-                    ],
-                    "_id": "5c88fa8cf4afda39709c2955",
-                    "name": "Grand Palace",
-                    "id": "5c88fa8cf4afda39709c2955"
-                },
-                "user": {
-                    "photo": "user-14.jpg",
-                    "role": "user",
-                    "_id": "5c8a23c82f8fb814b56fa18d",
-                    "name": "Laura Wilson",
-                    "email": "laura@example.com",
-                    "passwordChangedAt": "2020-10-15T10:06:02.014Z"
-                },
-                "price": 497
+                    ]
+                }
             }
         ]
     }
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#users--bookings)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2393,7 +2879,10 @@ Accessing this endpoint retrieves a **List to All Bookings Objects** in the data
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2415,9 +2904,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2509,10 +3006,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#bookings)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2528,7 +3030,10 @@ Accessing this endpoint retrieves a **Single Booking Object**.<br><br>\* Require
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2550,9 +3055,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2599,10 +3112,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#bookings)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2638,7 +3156,10 @@ Accessing this endpoint will **Create a Single User Object**.<br><br> \* Require
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2667,9 +3188,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 201 Created`
 
@@ -2688,10 +3217,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2707,7 +3241,10 @@ Accessing this endpoint will **Authenticate a Single User**.<br>A Token will be 
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2734,9 +3271,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2754,10 +3299,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2773,7 +3323,10 @@ Accessing this endpoint will **Send Password Recovey Link via Email**.<br>The Li
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2799,9 +3352,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2812,22 +3373,35 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
 Example Email
 
+<details>
+<summary>
+<i>Email Text Template</i>
+</summary>
+<br>
+
 ```
 Forgot your Password ? Reset your Password by following the link below:
 
-/api/v1/users/resetPassword/:token
+{{URL}}/api/v1/users/resetPassword/:token
 
 If you didn't forget your password, please ignore this email!
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2843,7 +3417,10 @@ Accessing this endpoint allow the user to **Change the Password**.<br>A new Toke
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2870,9 +3447,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2890,10 +3475,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2909,7 +3499,10 @@ Accessing this endpoint will retrieve the **Current User Object**.<br><br>\* Acc
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2931,9 +3524,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -2950,10 +3551,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -2969,7 +3575,10 @@ Accessing this endpoint will **Update Current User Data** and will return the en
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -2996,9 +3605,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -3015,10 +3632,15 @@ Example Response
 }
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -3034,7 +3656,10 @@ Accessing this endpoint will **Update Current User Password**.<br> Also, will up
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -3063,9 +3688,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 200 OK`
 
@@ -3083,13 +3716,15 @@ Example Response
 }
 ```
 
-<br>
-
-[**^ Back to Top**](#authentication)
+</details>
 
 <br>
-<br>
 
+<hr>
+
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
 
@@ -3105,7 +3740,10 @@ Accessing this endpoint will **Update Current User Password**.<br> Also, will up
 
 Example Request
 
-(<i>Language: Node.js - Axios</i>)
+<details>
+<summary>
+<i>Language: Node.js - Axios</i>
+</summary>
 
 ```javascript
 var axios = require('axios');
@@ -3127,9 +3765,17 @@ axios(config)
   });
 ```
 
+</details>
+
 <br>
 
 Example Response
+
+<details>
+<summary>
+<i>JSON-encoded response</i>
+</summary>
+<br>
 
 `Status: 204 No Content`
 
@@ -3137,9 +3783,14 @@ Example Response
 // empty - no content will be displayed
 ```
 
+</details>
+
 <br>
 
-[**^ Back to Top**](#authentication)
+<hr>
 
+[**^ Back to Top**](#table-of-contents)
+
+<br>
 <br>
 <br>
