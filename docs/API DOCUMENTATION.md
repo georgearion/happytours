@@ -2,7 +2,7 @@
 
 v1
 
-The HappyTours API is organized around REST. This API contains endpoints for Tours, Users, Reviews and Authentication and has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response code authentication, and verbs.
+The HappyTours API is organized around REST. This API contains endpoints for **Tours**, **Reviews**, **Users**, **Bookings** and **Authentication** and has predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response code authentication, and verbs.
 
 <br>
 <br>
@@ -41,6 +41,10 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
 
     - [Create New Review on Tour](#create-new-review-on-tour)
 
+  - #### [**Tours / Bookings**](#tours--bookings-endpoints)
+
+    - [Get All Bookings on Tour](#get-all-bookings-on-tour)
+
 - ### [**REVIEWS**](#reviews-endpoints)
 
   - #### [**Get All Reviews**](#get-all-reviews-endpoints)
@@ -64,6 +68,16 @@ The HappyTours API is organized around REST. This API contains endpoints for Tou
   - [**Get User**](#get-user)
   - [**Update User**](#update-user)
   - [**Delete User**](#delete-user)
+
+  - #### [**Users / Bookings**](#users--bookings-endpoints)
+
+    - [Get All Bookings on User](#get-all-bookings-on-user)
+
+* ### [**BOOKINGS**](#bookings-endpoints)
+
+  - [**Get All Bookings**](#get-all-bookings)
+
+  - [**Get Booking**](#get-booking)
 
 * ### [**AUTHENTICATION**](#authentication-endpoints)
 
@@ -1265,6 +1279,110 @@ Example Response
 <br>
 <br>
 
+### **Tours / Bookings** Endpoints
+
+Get all Bookings for a single Tour.
+
+<br>
+
+> ```javascript
+>    GET /api/v1/tours/:id/bookings
+> ```
+
+<br>
+
+#### **Get All Bookings on Tour**
+
+Accessing this endpoint will retrieve **All Bookings Of A Single Tour**.<br><br> \* Requires the Tour id.<br>\* Accessing this Endpoint requires Authentication
+
+<br>
+
+> **GET** `/api/v1/tours/:id/bookings`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '/api/v1/tours/:id/bookings',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 1,
+    "data": {
+        "data": [
+            {
+                "createdAt": "2020-10-22T05:46:04.981Z",
+                "paid": true,
+                "_id": "5f913b3ca633c81ed4eb39d8",
+                "tour": {
+                    "guides": [
+                        {
+                            "photo": "user-12.jpg",
+                            "role": "lead-guide",
+                            "_id": "5c8a22c62f8fb814b56fa18b",
+                            "name": "Miyah Myles",
+                            "email": "miyah@example.com"
+                        },
+                        {
+                            "photo": "user-6.jpg",
+                            "role": "guide",
+                            "_id": "5c8a1f4e2f8fb814b56fa185",
+                            "name": "Jennifer Hardy",
+                            "email": "jennifer@example.com"
+                        }
+                    ],
+                    "_id": "5c88fa8cf4afda39709c2955",
+                    "name": "Grand Palace",
+                    "id": "5c88fa8cf4afda39709c2955"
+                },
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "_id": "5c8a23c82f8fb814b56fa18d",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com",
+                },
+                "price": 497
+            }
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#tours--bookings)
+
+<br>
+<br>
+
 ## **Reviews** Endpoints
 
 Get all Reviews, create new ones, edit and delete Reviews.
@@ -2098,6 +2216,392 @@ Example Response
 <br>
 
 [**^ Back to Top**](#users)
+
+<br>
+<br>
+
+### **Users / Bookings** Endpoints
+
+Get all Bookings for a single User.
+
+<br>
+
+> ```javascript
+>    GET /api/v1/users/:id/bookings
+> ```
+
+<br>
+
+#### **Get All Bookings on User**
+
+Accessing this endpoint will retrieve **All Bookings Of A Single User**.<br><br> \* Requires the User id.<br>\* Accessing this Endpoint requires Authentication
+
+<br>
+
+> **GET** `/api/v1/users/:id/bookings`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '/api/v1/users/:id/bookings',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 2,
+    "data": {
+        "data": [
+            {
+                "createdAt": "2020-10-22T08:27:53.952Z",
+                "paid": true,
+                "_id": "5f914a2865ecda1ae4868cec",
+                "tour": {
+                    "guides": [
+                        {
+                            "photo": "user-10.jpg",
+                            "role": "lead-guide",
+                            "_id": "5c8a21d02f8fb814b56fa189",
+                            "name": "Steve T. Scaife",
+                            "email": "steve@example.com"
+                        },
+                        {
+                            "photo": "user-7.jpg",
+                            "role": "guide",
+                            "_id": "5c8a201e2f8fb814b56fa186",
+                            "name": "Kate Morrison",
+                            "email": "kate@example.com"
+                        },
+                        {
+                            "photo": "user-5c8a1f292f8fb814b56fa184-1603171304236.jpeg",
+                            "role": "guide",
+                            "_id": "5c8a1f292f8fb814b56fa184",
+                            "name": "Leo Gillespie",
+                            "email": "leo@example.com"
+                        }
+                    ],
+                    "_id": "5c88fa8cf4afda39709c2951",
+                    "name": "Similan Islands",
+                    "id": "5c88fa8cf4afda39709c2951"
+                },
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "_id": "5c8a23c82f8fb814b56fa18d",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com",
+                    "passwordChangedAt": "2020-10-15T10:06:02.014Z"
+                },
+                "price": 397
+            },
+            {
+                "createdAt": "2020-10-22T05:46:04.981Z",
+                "paid": true,
+                "_id": "5f913b3ca633c81ed4eb39d8",
+                "tour": {
+                    "guides": [
+                        {
+                            "photo": "user-12.jpg",
+                            "role": "lead-guide",
+                            "_id": "5c8a22c62f8fb814b56fa18b",
+                            "name": "Miyah Myles",
+                            "email": "miyah@example.com"
+                        },
+                        {
+                            "photo": "user-6.jpg",
+                            "role": "guide",
+                            "_id": "5c8a1f4e2f8fb814b56fa185",
+                            "name": "Jennifer Hardy",
+                            "email": "jennifer@example.com"
+                        }
+                    ],
+                    "_id": "5c88fa8cf4afda39709c2955",
+                    "name": "Grand Palace",
+                    "id": "5c88fa8cf4afda39709c2955"
+                },
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "_id": "5c8a23c82f8fb814b56fa18d",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com",
+                    "passwordChangedAt": "2020-10-15T10:06:02.014Z"
+                },
+                "price": 497
+            }
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#users--bookings)
+
+<br>
+<br>
+
+## **Bookings** Endpoints
+
+Get all Bookings. <br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin and Lead-Guide can access)
+
+<br>
+
+> ```javascript
+>    GET /api/v1/bookings
+>    GET /api/v1/bookings/:id
+> ```
+
+<br>
+<br>
+
+### **Get All Bookings**
+
+Accessing this endpoint retrieves a **List to All Bookings Objects** in the database.<br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin and Lead Guide can access)
+
+<br>
+
+> **GET** `/api/v1/bookings`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '/api/v1/bookings',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "results": 2,
+    "data": {
+        "data": [
+            {
+                "createdAt": "2020-10-22T08:27:53.952Z",
+                "paid": true,
+                "_id": "5f914a2865ecda1ae4868cec",
+                "tour": {
+                    "guides": [
+                        {
+                            "photo": "user-10.jpg",
+                            "role": "lead-guide",
+                            "_id": "5c8a21d02f8fb814b56fa189",
+                            "name": "Steve T. Scaife",
+                            "email": "steve@example.com"
+                        },
+                        {
+                            "photo": "user-7.jpg",
+                            "role": "guide",
+                            "_id": "5c8a201e2f8fb814b56fa186",
+                            "name": "Kate Morrison",
+                            "email": "kate@example.com"
+                        },
+                        {
+                            "photo": "user-5c8a1f292f8fb814b56fa184-1603171304236.jpeg",
+                            "role": "guide",
+                            "_id": "5c8a1f292f8fb814b56fa184",
+                            "name": "Leo Gillespie",
+                            "email": "leo@example.com"
+                        }
+                    ],
+                    "_id": "5c88fa8cf4afda39709c2951",
+                    "name": "Similan Islands",
+                    "id": "5c88fa8cf4afda39709c2951"
+                },
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "_id": "5c8a23c82f8fb814b56fa18d",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com",
+                    "passwordChangedAt": "2020-10-15T10:06:02.014Z"
+                },
+                "price": 397
+            },
+            {
+                "createdAt": "2020-10-22T05:46:04.981Z",
+                "paid": true,
+                "_id": "5f913b3ca633c81ed4eb39d8",
+                "tour": {
+                    "guides": [
+                        {
+                            "photo": "user-12.jpg",
+                            "role": "lead-guide",
+                            "_id": "5c8a22c62f8fb814b56fa18b",
+                            "name": "Miyah Myles",
+                            "email": "miyah@example.com"
+                        },
+                        {
+                            "photo": "user-6.jpg",
+                            "role": "guide",
+                            "_id": "5c8a1f4e2f8fb814b56fa185",
+                            "name": "Jennifer Hardy",
+                            "email": "jennifer@example.com"
+                        }
+                    ],
+                    "_id": "5c88fa8cf4afda39709c2955",
+                    "name": "Grand Palace",
+                    "id": "5c88fa8cf4afda39709c2955"
+                },
+                "user": {
+                    "photo": "user-14.jpg",
+                    "role": "user",
+                    "_id": "5c8a23c82f8fb814b56fa18d",
+                    "name": "Laura Wilson",
+                    "email": "laura@example.com",
+                    "passwordChangedAt": "2020-10-15T10:06:02.014Z"
+                },
+                "price": 497
+            }
+        ]
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#bookings)
+
+<br>
+<br>
+
+### **Get Booking**
+
+Accessing this endpoint retrieves a **Single Booking Object**.<br><br>\* Requires the Booking Id<br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin and Lead Guide can access)
+
+<br>
+
+> **GET** `/api/v1/bookings/:id`
+
+<br>
+
+Example Request
+
+(<i>Language: Node.js - Axios</i>)
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: '/api/v1/bookings/:id',
+  headers: {
+    Authorization: 'Bearer {{token}}'
+  }
+};
+
+axios(config)
+  .then(function(response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+<br>
+
+Example Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "createdAt": "2020-10-22T05:46:04.981Z",
+            "paid": true,
+            "_id": "5f913b3ca633c81ed4eb39d8",
+            "tour": {
+                "guides": [
+                    {
+                        "photo": "user-12.jpg",
+                        "role": "lead-guide",
+                        "_id": "5c8a22c62f8fb814b56fa18b",
+                        "name": "Miyah Myles",
+                        "email": "miyah@example.com"
+                    },
+                    {
+                        "photo": "user-6.jpg",
+                        "role": "guide",
+                        "_id": "5c8a1f4e2f8fb814b56fa185",
+                        "name": "Jennifer Hardy",
+                        "email": "jennifer@example.com"
+                    }
+                ],
+                "_id": "5c88fa8cf4afda39709c2955",
+                "name": "Grand Palace",
+                "id": "5c88fa8cf4afda39709c2955"
+            },
+            "user": {
+                "photo": "user-14.jpg",
+                "role": "user",
+                "_id": "5c8a23c82f8fb814b56fa18d",
+                "name": "Laura Wilson",
+                "email": "laura@example.com",
+                "passwordChangedAt": "2020-10-15T10:06:02.014Z"
+            },
+            "price": 497
+        }
+    }
+}
+```
+
+<br>
+
+[**^ Back to Top**](#bookings)
 
 <br>
 <br>
