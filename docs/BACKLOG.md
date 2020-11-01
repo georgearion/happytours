@@ -411,3 +411,82 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 <br>
 
 </details>
+
+<br>
+
+<details>
+<summary>
+<b>FRONTEND</b> - Server-Side Rendering with PUG
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+<details>
+<summary>
+<b>First Steps with PUG</b>
+</summary>
+
+<br>
+
+- [#99 Setting up Pug in Express](https://github.com/georgearion/happytours/commit/555d2c607f087e463b47c81c83fc7210745ce1f5)
+- [#100 First Steps with Pug](https://github.com/georgearion/happytours/commit/64f7cb72dcff1789dd89ea644f529d46abaad50a)
+- [#101 Creating our Base Template](https://github.com/georgearion/happytours/commit/19cf32a8ac53953e46f9b1e58ae0b1ac5b1e0ef7)
+- [#102 Including Files into Pug Templates](https://github.com/georgearion/happytours/commit/43bd9625b705b1714d8d3abf3b667fcc38d39223)
+- [#103 Extending Our Base Template with Blocks](https://github.com/georgearion/happytours/commit/a78117106538eedd6e57b4098045018f57a350a6)
+- [#104 Setting up the Project Structure](https://github.com/georgearion/happytours/commit/7e5f0fb788dd244cde5228b49dbf535f5064dc97)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>Frontend - Tours</b>
+</summary>
+
+<br>
+
+- [#105 Building the Tour Overview](https://github.com/georgearion/happytours/commit/1172b94a93fb4c9c9aff25153b582346a5f5b11b)
+- [#106 Building the Tour Page](https://github.com/georgearion/happytours/commit/5995c9b968f56ab29a9ab86a4bb12e188a1ade67)
+- [#107 Including a Map with Mapbox](https://github.com/georgearion/happytours/commit/d7e6f77b29e08b5d0f247d20c9bd2b28e72ae1f3)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>Frontend - Users</b>
+</summary>
+
+<br>
+
+- [#108 Building a Login Screen](https://github.com/georgearion/happytours/commit/a25fe6d488880e80d89d625022532cedcf57fecb)
+- [#109 Logging in Users with Our API](https://github.com/georgearion/happytours/commit/fd002aba832ef6358b1c994e6b379f2e2d6e9edf)
+- [#110 Logging out Users](https://github.com/georgearion/happytours/commit/d5761cb0105662f2f1cc7d2c0443b0f1e8a75a58)
+- [#111 Rendering Error Pages](https://github.com/georgearion/happytours/commit/404166b3536022d3765022393dfb8e9f43749491)
+- [#112 Building the User Account Page](https://github.com/georgearion/happytours/commit/e65bea68799608c788e3681275f9abb4bb065c57)
+- [#113 Updating User Data](https://github.com/georgearion/happytours/commit/389f381326b99dcda54cf164d42b718fcf89b47c)
+- [#114 Updating User Data with Our API](https://github.com/georgearion/happytours/commit/765eb80ca57558590a74b2449c6d1aaaf441094b)
+- [#115 Updating User Password with Our API](https://github.com/georgearion/happytours/commit/7bbf93ee56719d4937ac3c2542021960fac96fb8)
+
+- [#136 Building a Signup Screen](https://github.com/georgearion/happytours/commit/c6f997110c8bb1ea89f74b89fee134d30d9d8ea1)
+- [#137 Signup Users with our API](https://github.com/georgearion/happytours/commit/e6595bccf3139a17b67e1a9a5f00bd527c66afb0)
+- [#138 Signup Users with our API](https://github.com/georgearion/happytours/commit/ebb4b3365bcf5d175230935171ceccf60d58862d)
+- [#139 Building Forgot Password & Reset](https://github.com/georgearion/happytours/commit/4c853b554d4891493439d3de89c4928a0d64c0a6)
+
+</details>
+
+<br>
+
+<hr>
+
+<br>
+
+</details>
+
+<br>
