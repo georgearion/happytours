@@ -490,3 +490,89 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 </details>
 
 <br>
+
+<details>
+<summary>
+<b>ADVANCED FEATURES</b> - File Uploads, Emails, Payments, Bookings
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+<details>
+<summary>
+<b>Advanced Features - File Uploads</b>
+</summary>
+
+<br>
+
+- [#116 Image Uploads Using Multer](https://github.com/georgearion/happytours/commit/c705f8cb1592115fd2d596aeebd17453361b08ea)
+- [#117 Configuring Multer](https://github.com/georgearion/happytours/commit/59c9284059802ecc59c6a057bf999fa8249c7690)
+- [#118 Saving Image Name to Database](https://github.com/georgearion/happytours/commit/6a67a110ad756827fb5d24e93934a949eb2d3227)
+- [#119 Resizing Images with Sharp](https://github.com/georgearion/happytours/commit/e0130a22c62d643bca1fc7e49b344d2bad46fe65)
+- [#120 Adding Image Uploads to Form](https://github.com/georgearion/happytours/commit/50e73adc69fed5a95a0d41094564381c73394271)
+- [#121 Uploading Multiple Images](https://github.com/georgearion/happytours/commit/53c33c179657afeafef4d940691051d040db8f12)
+- [#122 Processing Multiple Images](https://github.com/georgearion/happytours/commit/440888ce517e07fb33f44776713922f11d5110cf)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>Advanced Features - Emails</b>
+</summary>
+
+<br>
+
+- [#123 Building a Complex Email Handler](https://github.com/georgearion/happytours/commit/d6ec27dd2c44c2fe57da1c074fb182e6d5307890)
+- [#124 Email Templates with Pug - Welcome Emails](https://github.com/georgearion/happytours/commit/b585ddf41cabd14355f43d27a2a3dbc977618f1a)
+- [#125 Sending Password Reset Emails](https://github.com/georgearion/happytours/commit/317ab9f47c8fb0b0c5eb1e358547b25ca290b88b)
+- [#126 Using Sendgrid for Real Emails](https://github.com/georgearion/happytours/commit/accb6a46b062bdfa3962ae88cf4b0689b138af97)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>Advanced Features - Payments</b>
+</summary>
+
+<br>
+
+- [#127 Integrating Stripe into the Backend](https://github.com/georgearion/happytours/commit/c07a7cbdb58e22fbcdc3d69badd81d6c31f5f0a1)
+- [#128 Processing Payments on the Frontend](https://github.com/georgearion/happytours/commit/80e8a90d66d83b486af69ae9034f9903c564e75c)
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>Advanced Features - Bookings</b>
+</summary>
+
+<br>
+
+- [#129 Modelling the Bookings](https://github.com/georgearion/happytours/commit/d2450428b47dc3cbcbd639516def0253962172bd)
+- [#130 Creating New Bookings on Checkout Success](https://github.com/georgearion/happytours/commit/f73910fd52ded867cb71d8c8aabb6348e9eb5bfe)
+- [#131 Rendering a User's Booked Tours](https://github.com/georgearion/happytours/commit/c2f9a2dc37549398a12daee7e3fee7e165a6a98a)
+- [#132 Finishing the Bookings API](https://github.com/georgearion/happytours/commit/68ab64b3c6b999560e49e7501678c26575dd0138)
+- [#133 Tours Bookings Route](https://github.com/georgearion/happytours/commit/63173e24a3274978aa5a2ddf886c5b52a9e652c3)
+- [#134 Users Bookings Route](https://github.com/georgearion/happytours/commit/5d421ed6c667927b80c253da937a57527a394cdb)
+
+</details>
+
+<br>
+
+<hr>
+
+<br>
+
+</details>
+
+<br>
