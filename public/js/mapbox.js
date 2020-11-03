@@ -1,7 +1,5 @@
 /* eslint-disable */
 
-
-
 export const displayMap = locations => {
   mapboxgl.accessToken =
     'pk.eyJ1IjoiZ2VvcmdlYXJpb24iLCJhIjoiY2tmeHkzenNhMjR6dzJ5bXp2bWptcmVqbyJ9.gM4bc8pjaQb38Ur7coqyVA';
@@ -47,8 +45,8 @@ export const displayMap = locations => {
     padding: {
       top: 250,
       bottom: 150,
-      left: 200,
-      right: 200
+      left: 100,
+      right: 100
     }
   });
 };

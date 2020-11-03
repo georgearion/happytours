@@ -6637,8 +6637,8 @@ var displayMap = function displayMap(locations) {
     padding: {
       top: 250,
       bottom: 150,
-      left: 200,
-      right: 200
+      left: 100,
+      right: 100
     }
   });
 };

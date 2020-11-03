@@ -435,7 +435,7 @@ body {
   margin-right: 0.8rem;
 }
 .heading-box__detail:not(:last-child) {
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 .heading-box__icon {
   height: 2rem;
@@ -444,7 +444,44 @@ body {
   -webkit-filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
   filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
 }
+@media only screen and (max-width: 100em) {
+  .section-header {
+    height: 38vw;
+  }
 
+  .heading-primary {
+    width: 70%;
+    font-size: 4rem;
+  }
+
+  .heading-box__detail {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .section-header {
+    height: 46vw;
+  }
+
+  .heading-primary {
+    width: 90%;
+    font-size: 3.4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .section-header {
+    height: 64vw;
+  }
+
+  .heading-primary {
+    width: 100%;
+    font-size: 2.4rem;
+  }
+
+  .heading-box__detail {
+    font-size: 1.2rem;
+  }
+}
 .section-description {
   background-color: #fcfcfc;
   margin-top: calc(0px - var(--section-rotate));
@@ -459,6 +496,14 @@ body {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .section-description {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+  }
 }
 
 .description-box .description {
@@ -772,6 +817,42 @@ body {
 .cta__text {
   font-size: 1.9rem;
   font-weight: 400;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .cta__img {
+    /* display: none; */
+  }
+  .cta {
+    padding: 20em 2em 4em 2em;
+  }
+  .cta__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+  }
+
+  .cta__img--logo {
+    -webkit-transform: translate(50%, -140%);
+    transform: translate(50%, -140%);
+  }
+  .cta__img--1 {
+    -webkit-transform: translate(75%, -140%) scale(0.97);
+    transform: translate(75%, -140%) scale(0.97);
+  }
+  .cta__img--2 {
+    -webkit-transform: translate(100%, -140%) scale(0.94);
+    transform: translate(100%, -140%) scale(0.94);
+  }
+
+  .cta__text,
+  .heading-secondary {
+    text-align: center;
+    margin-bottom: 0.625em;
+    width: 90%;
+  }
 }
 
 .user-view {
