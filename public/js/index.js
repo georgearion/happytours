@@ -15,6 +15,7 @@ const forgotForm = document.querySelector('form.form--forgot');
 const resetForm = document.querySelector('form.form--reset');
 const loginForm = document.querySelector('form.form--login');
 const logoutBtn = document.querySelector('.nav__el--logout');
+const logoutAccountBtn = document.querySelector('.side-nav--log-out');
 const userDataForm = document.querySelector('form.form-user-data');
 const userPasswordForm = document.querySelector('form.form.form-user-password');
 const bookBtn = document.getElementById('book-tour');
@@ -67,6 +68,8 @@ if (loginForm) {
 }
 
 if (logoutBtn) logoutBtn.addEventListener('click', logout);
+
+if (logoutAccountBtn) logoutAccountBtn.addEventListener('click', logout);
 
 if (userDataForm) {
   userDataForm.addEventListener('submit', e => {

@@ -9224,6 +9224,7 @@ var forgotForm = document.querySelector('form.form--forgot');
 var resetForm = document.querySelector('form.form--reset');
 var loginForm = document.querySelector('form.form--login');
 var logoutBtn = document.querySelector('.nav__el--logout');
+var logoutAccountBtn = document.querySelector('.side-nav--log-out');
 var userDataForm = document.querySelector('form.form-user-data');
 var userPasswordForm = document.querySelector('form.form.form-user-password');
 var bookBtn = document.getElementById('book-tour'); //DELEGATION
@@ -9275,6 +9276,7 @@ if (loginForm) {
 }
 
 if (logoutBtn) logoutBtn.addEventListener('click', _login.logout);
+if (logoutAccountBtn) logoutAccountBtn.addEventListener('click', _login.logout);
 
 if (userDataForm) {
   userDataForm.addEventListener('submit', function (e) {
@@ -9362,7 +9364,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55193" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57969" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

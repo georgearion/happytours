@@ -813,6 +813,18 @@ body {
   padding: 0 8rem;
 }
 
+@media only screen and (max-width: 50em) {
+  .user-view {
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    flex-flow: column nowrap;
+  }
+  .user-view__form-container {
+    padding: 0 1.2rem;
+  }
+}
+
 .footer {
   background-color: #f7f7f7;
   padding: 6rem 4rem 3rem 4rem;
