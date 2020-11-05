@@ -32,14 +32,14 @@ app.set('views', path.join(__dirname, 'views'));
 //
 // respond to simple requests (get/post)
 // allow all - Access-Control-Allow-Origin *
-app.use(cors());
+//app.use(cors());
 // allow specific domains
 // app.use(cors({
 //   origin: 'https://www.domain.com'
 // }))
 //
 // respond to complex request (patch/delete)
-app.options('*', cors());
+//app.options('*', cors());
 
 // Serving static files
 app.use(express.static(path.join(__dirname, '/public')));
