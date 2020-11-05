@@ -820,9 +820,6 @@ body {
 }
 
 @media only screen and (max-width: 37.5em) {
-  .cta__img {
-    /* display: none; */
-  }
   .cta {
     padding: 20em 2em 4em 2em;
   }
