@@ -395,7 +395,7 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 
 <br>
 
-[> go to API DOCUMENTATION](https://github.com/georgearion/happytours/blob/master/docs/API%20DOCUMENTATION.md)
+[> visit API DOCS](https://github.com/georgearion/happytours/blob/master/docs/API%20DOCUMENTATION.md)
 
 <br>
 
@@ -577,6 +577,39 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 - [#134 Users Bookings Route](https://github.com/georgearion/happytours/commit/5d421ed6c667927b80c253da937a57527a394cdb)
 
 </details>
+
+<br>
+
+<hr>
+
+<br>
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>DEPLOYMENT</b>
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+[> visit LIVE APP](https://happytours.herokuapp.com/)
+
+<br>
+
+**Heroku Deployment**
+
+- [#150 prepare for deployment](https://github.com/georgearion/happytours/commit/c9ed6c2e1313c5dff6392ff80cfd4ca605eb352f)
+- [#151 node start command](https://github.com/georgearion/happytours/commit/9ee9828423cbea93a5db85bb66cfb00db10b2a40)
+- [#152 secure https connections and proxy](https://github.com/georgearion/happytours/commit/e384e042962ba8ab76ff9466d3d655105b68c186)
+- [#153 responding to a SIGTERM signal](https://github.com/georgearion/happytours/commit/8b4b03cef7fbcea9aa367846c21eff5ffae2d325)
+- [#154 implementing CORS](https://github.com/georgearion/happytours/commit/b78ffe0800ce17e29cbbd049b7d6ccf736f92ac0)
 
 <br>
 
