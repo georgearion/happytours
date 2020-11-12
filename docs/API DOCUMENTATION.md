@@ -3797,6 +3797,6 @@ Example Response
 
 <hr>
 
-[readme](https://github.com/georgearion/happytours/blob/master/docs/readme.md) | [START HERE](https://github.com/georgearion/happytours/blob/master/docs/START%20HEREmd) | API DOCS | [BACKLOG](https://github.com/georgearion/happytours/blob/master/docs/BACKLOG.md)
+[readme](https://github.com/georgearion/happytours/blob/master/docs/readme.md) | [START HERE](https://github.com/georgearion/happytours/blob/master/docs/START%20HERE.md) | API DOCS | [BACKLOG](https://github.com/georgearion/happytours/blob/master/docs/BACKLOG.md)
 
 <br>
