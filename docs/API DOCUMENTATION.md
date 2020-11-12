@@ -7,7 +7,7 @@ The HappyTours API is organized around REST. This API contains endpoints for **T
 <br>
 <br>
 
-### **Table of Contents**
+## **Table of Contents**
 
 <hr>
 <br>
@@ -3793,4 +3793,10 @@ Example Response
 
 <br>
 <br>
+<br>
+
+<hr>
+
+[readme](https://github.com/georgearion/happytours/blob/master/docs/readme.md) | [START HERE](https://github.com/georgearion/happytours/blob/master/docs/START%20HEREmd) | API DOCS | [BACKLOG](https://github.com/georgearion/happytours/blob/master/docs/BACKLOG.md)
+
 <br>

@@ -11,7 +11,7 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 
 <br>
 
-### **Table of Contents**
+## **Table of Contents**
 
 <hr>
 <br>
@@ -618,5 +618,13 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 <br>
 
 </details>
+
+<br>
+<br>
+<br>
+
+<hr>
+
+[readme](https://github.com/georgearion/happytours/blob/master/docs/readme.md) | [START HERE](https://github.com/georgearion/happytours/blob/master/docs/START%20HEREmd) | [API DOCS](https://github.com/georgearion/happytours/blob/master/docs/API%20DOCUMENTATION.md) | BACKLOG
 
 <br>
