@@ -395,14 +395,17 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 
 <br>
 
-**RESTful API Documentation**
+[> go to API DOCUMENTATION](https://github.com/georgearion/happytours/blob/master/docs/API%20DOCUMENTATION.md)
+
+<br>
+
+**RESTful API Documentation Logs**
 
 - [#95 Tours Endpoints](https://github.com/georgearion/happytours/commit/fca2f3823f1bec4a6e338b28b2efdb8e00e379ae)
 - [#96 Reviews Endpoints](https://github.com/georgearion/happytours/commit/78b00e9c7bf9f9b8fa429fc8854b00a9586547c6)
 - [#97 Users Endpoints](https://github.com/georgearion/happytours/commit/574bf117e26e497cee8ad870b5474febb8e14602)
 - [#98 Authentication](https://github.com/georgearion/happytours/commit/0111c85928f827b8a8fc3d9c56a47c7ae314689e)
 - [#140 Bookings Endpoints](https://github.com/georgearion/happytours/commit/8b20ad274d89088c2e2f6c516ede88884b30aa72)
-- [#141 Refactor Collapsible Markdown](https://github.com/georgearion/happytours/commit/038a13630d4a44ca4045580a72367b741bffce5e)
 
 <br>
 
@@ -546,6 +549,14 @@ TLDR: See listed below all important deliverables as required to complete HappyT
 
 - [#127 Integrating Stripe into the Backend](https://github.com/georgearion/happytours/commit/c07a7cbdb58e22fbcdc3d69badd81d6c31f5f0a1)
 - [#128 Processing Payments on the Frontend](https://github.com/georgearion/happytours/commit/80e8a90d66d83b486af69ae9034f9903c564e75c)
+
+<br>
+
+- [#157 Checkout Payments with Stripe Webhooks](https://github.com/georgearion/happytours/commit/eb0c95d67f800d56440555eba1355dde0e15c569)
+- [#158 Checkout Payments fix broken image link](https://github.com/georgearion/happytours/commit/660ae6e80993f62ad48677d95e7f2c21d731e83d)
+- [#159 Checkout Payments fix checkout session event type](https://github.com/georgearion/happytours/commit/99798a5724c1db3c208b6d43b6285cf8713c727c)
+- [#160 Checkout Payments fix booking checkout price](https://github.com/georgearion/happytours/commit/ad257818896d8db0a5af1aa601cd202997a70099)
+- [#161 Checkout Payments Notify User on Success Page](https://github.com/georgearion/happytours/commit/36aa3a7d023e0ee4c15edc431949a2a5a0ca36b7)
 
 </details>
 
