@@ -20,6 +20,10 @@ The HappyTours API is organized around REST. This API contains endpoints for **T
 
 <br>
 
+<hr>
+
+<br>
+
 - #### [**Get All Tours**](#tours-endpoints)
 
   - [Get Default Tours](#get-default-tours)
@@ -58,101 +62,10 @@ The HappyTours API is organized around REST. This API contains endpoints for **T
 
   - [Get All Bookings on Tour](#get-all-bookings-on-tour)
 
-</details>
-
-<br>
-
-<details>
-<summary>
-<b>REVIEWS</b> ENDPOINTS
-
-</summary>
-
-<br>
-
-- #### [**Get All Reviews**](#reviews-endpoints)
-
-  - [Get Default Reviews](#get-default-reviews)
-
-  - [Sorting Reviews](#sorting-reviews)
-  - [Filtering Reviews](#filtering-reviews)
-  - [Combination, Sorting and Filtering Reviews](#combination-sorting-and-filtering-reviews)
-
-- [**Get Review**](#get-review)
-
-- [**Create New Review**](#create-new-review)
-- [**Update Review**](#update-review)
-- [**Delete Review**](#delete-review)
-
-</details>
-
-<br>
-
-<details>
-<summary>
-<b>USERS</b> ENDPOINTS
-
-</summary>
-
-<br>
-
-- [**Get All Users**](#users-endpoints)
-
-- [**Get User**](#get-user)
-- [**Update User**](#update-user)
-- [**Delete User**](#delete-user)
-
-<br>
-
-- #### [**USERS / BOOKINGS**](#users--bookings-endpoints)
-
-  - [Get All Bookings on User](#get-all-bookings-on-user)
-
-</details>
-
-<br>
-
-<details>
-<summary>
-<b>BOOKINGS</b> ENDPOINTS
-
-</summary>
-
-<br>
-
-- [**Get All Bookings**](#bookings-endpoints)
-
-- [**Get Booking**](#get-booking)
-
-</details>
-
-<br>
-
-<details>
-<summary>
-<b>AUTHENTICATION</b>
-
-</summary>
-
-<br>
-
-- [**Sign Up**](#authentication-endpoints)
-
-- [**Login**](#login)
-- [**Forgot Password**](#forgot-password)
-- [**Reset Password**](#reset-password)
-- [**Get Current User**](#get-current-user)
-- [**Update Current User Data**](#update-current-user-data)
-- [**Update Current User Password**](#update-current-user-password)
-- [**Delete Current User**](#delete-current-user)
-
-</details>
-
-<br>
-<hr>
-
 <br>
 <br>
+<br>
+
 <br>
 
 ## **Tours** Endpoints
@@ -1676,6 +1589,45 @@ Example Response
 <br>
 <br>
 
+<hr>
+
+<br>
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>REVIEWS</b> ENDPOINTS
+
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+- #### [**Get All Reviews**](#reviews-endpoints)
+
+  - [Get Default Reviews](#get-default-reviews)
+
+  - [Sorting Reviews](#sorting-reviews)
+  - [Filtering Reviews](#filtering-reviews)
+  - [Combination, Sorting and Filtering Reviews](#combination-sorting-and-filtering-reviews)
+
+- [**Get Review**](#get-review)
+
+- [**Create New Review**](#create-new-review)
+- [**Update Review**](#update-review)
+- [**Delete Review**](#delete-review)
+
+<br>
+<br>
+
+<br>
+
 ## **Reviews** Endpoints
 
 Get all Reviews, create new ones, edit and delete Reviews.
@@ -2376,6 +2328,43 @@ Example Response
 <br>
 <br>
 
+<hr>
+
+<br>
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>USERS</b> ENDPOINTS
+
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+- [**Get All Users**](#users-endpoints)
+
+- [**Get User**](#get-user)
+- [**Update User**](#update-user)
+- [**Delete User**](#delete-user)
+
+<br>
+
+- #### [**USERS / BOOKINGS**](#users--bookings-endpoints)
+
+  - [Get All Bookings on User](#get-all-bookings-on-user)
+
+<br>
+<br>
+
+<br>
+
 ## **Users** Endpoints
 
 Get all Users, edit and delete Users. <br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin can access)
@@ -2853,6 +2842,35 @@ Example Response
 <br>
 <br>
 
+<hr>
+
+<br>
+<br>
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>BOOKINGS</b> ENDPOINTS
+
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+- [**Get All Bookings**](#bookings-endpoints)
+
+- [**Get Booking**](#get-booking)
+
+<br>
+<br>
+<br>
+
 ## **Bookings** Endpoints
 
 Get all Bookings. <br><br>\* Accessing this Endpoint requires Authentication (must be logged in to access, only Admin and Lead-Guide can access)
@@ -3119,6 +3137,41 @@ Example Response
 <hr>
 
 [**^ Back to Top**](#table-of-contents)
+
+<br>
+<br>
+<br>
+
+<hr>
+
+<br>
+<br>
+
+</details>
+
+<br>
+
+<details>
+<summary>
+<b>AUTHENTICATION</b>
+
+</summary>
+
+<br>
+
+<hr>
+
+<br>
+
+- [**Sign Up**](#authentication-endpoints)
+
+- [**Login**](#login)
+- [**Forgot Password**](#forgot-password)
+- [**Reset Password**](#reset-password)
+- [**Get Current User**](#get-current-user)
+- [**Update Current User Data**](#update-current-user-data)
+- [**Update Current User Password**](#update-current-user-password)
+- [**Delete Current User**](#delete-current-user)
 
 <br>
 <br>
@@ -3790,6 +3843,17 @@ Example Response
 <hr>
 
 [**^ Back to Top**](#table-of-contents)
+
+<br>
+<br>
+<br>
+
+<hr>
+
+<br>
+<br>
+
+</details>
 
 <br>
 <br>
